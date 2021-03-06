@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Yan  Pan | Blog</title>
+<title>Yan  Pan | Piano Music Generator</title>
 <meta name="description" content="Yan Pan's personal home page.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/music-lstm-rbm/">
 
 <!-- Theming-->
 
@@ -76,11 +76,9 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               Blog
-              
-              <span class="sr-only">(current)</span>
               
             </a>
           </li>
@@ -128,36 +126,25 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>Blog</h1>
-    <h2>Some random thoughts and notes.</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Piano Music Generator</h1>
+    <p class="post-description">LSTM-RBM based deep generative model to generate classical piano music.</p>
+  </header>
+
+  <article>
+    <p>This is our final project for CMU’s <a href="https://www.cs.cmu.edu/~epxing/Class/10701-20/">10-701 Introduction to Machine Learning</a>.
+We implemented the LSTM-RBM model in PyTorch for chord pitch generation and additional LSTM layer for chord duration generation.
+You can view the code for this project on <a href="https://github.com/elvis-pan/music-lstm-rbm">GitHub</a>.</p>
+
+<h3 id="notes-on-dataset">Notes on Dataset</h3>
+<p>The midi-version musics of some popular classical music composers can be downloaded from <a href="http://www.piano-midi.de/midicoll.htm">Classical Piano Midi Page</a>.
+We would suggest using songs of the same instrument, and if possible the same composer, in order to get good results.</p>
+
+<h3 id="my-contributions">My Contributions</h3>
+<p>In this project, I was responsible for all the design and implementation of the model in PyTorch.</p>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/convexnotes/">Convex Optimization Notes</a></h3>
-        <p class="post-meta">February 1, 2021</p>
-        <p>Notes for CMU 10-725 Convex Optimization.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/intro/">Some Facts About Me</a></h3>
-        <p class="post-meta">January 1, 2021</p>
-        <p>More about me!</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/courses/">Coursework</a></h3>
-        <p class="post-meta">January 1, 2021</p>
-        <p>A list of advanced courses I've taken.</p>
-      </li>
-    
-  </ul>
-
-  
-
+  </article>
 
 </div>
 
