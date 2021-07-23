@@ -45,6 +45,20 @@ Feel free to save and download any of these photos. However, I own the copyright
 </div>
 
 <div class="row mt-3 justify-content-center">
+    <div class="col-sm col-md-10 mt-3 mt-md-0 align-self-center">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/qomolangma1.jpg" data-zoomable>
+    </div>
+</div>
+<div class="row mt-3 justify-content-center">
+    <div class="col-sm col-md-10 mt-3 mt-md-0 align-self-center">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/qomolangma2.jpg" data-zoomable>
+    </div>
+</div>
+<div class="caption">
+    Sunset at Mt Qomolangma.
+</div>
+
+<div class="row mt-3 justify-content-center">
     <div class="col-sm col-md-8 mt-3 mt-md-0 align-self-center">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/potala1.jpg" data-zoomable>
     </div>
