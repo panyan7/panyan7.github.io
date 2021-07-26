@@ -8,9 +8,9 @@ nav: true
 
 - My hometown is Beijing, China.
 - I graduated from the Early Development Program of the [High School Affiliated to Renmin University of China (RDFZ)](https://en.wikipedia.org/wiki/High_School_Affiliated_to_Renmin_University_of_China) for talented kids. I was admitted one year earlier than normal, and spent 7 years there for both middle school and high school.
-- I am very interested in photography. I own a Sony α7R III camera. You can find some of my photography works on instagram, and I might upload some more shots to my website afterwards.
-- I love listening to electronic music, especially melody-heavy ones. My favorite genres are melodic dubstep (Seven Lions, Illenium, Crystal Skies...) and progressive/uplifting trance (Armin van Buuren, Aly & Fila, Solarstone, Gareth Emery...). [[This is trance)]](https://www.youtube.com/watch?v=Aw3c6rr8-mU)
-- I love soccer. I watch soccer games (Champions League, La Liga, Premier League) and play soccer very often.
+- I am very interested in photography. I'm very interested in landscape photography and art photography (in general). I also enjoy iPhone photography for its convenience. You can find some of my photography works on my website.
+- I am a huge fan of electronic music, especially melody-heavy genres like [trance music](https://en.wikipedia.org/wiki/Trance_music). Two songs about how artistic electronic music can be: [[deadmau5 - Strobe]](https://www.youtube.com/watch?v=tKi9Z-f6qX4), [[Ti&#235;sto - Adagio for Strings]](https://www.youtube.com/watch?v=lg99baQKNl8).
+- I play soccer and watch soccer games very often. I'm a fan of [Real Madrid](https://en.wikipedia.org/wiki/Real_Madrid_CF).
 
 <div class="row mt-3 justify-content-center">
     <div class="col-sm col-md-6 mt-3 mt-md-0">
