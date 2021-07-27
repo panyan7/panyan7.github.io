@@ -59,6 +59,47 @@ Feel free to save and download any of these photos. However, I own the copyright
 </div>
 
 <div class="row mt-3 justify-content-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/namchabarwa1.jpg" data-zoomable>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/namchabarwa2.jpg" data-zoomable>
+    </div>
+</div>
+<div class="row mt-3 justify-content-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/namchabarwa3.jpg" data-zoomable>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi1.jpg" data-zoomable>
+    </div>
+</div>
+<div class="row mt-3 justify-content-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi2.jpg" data-zoomable>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi3.jpg" data-zoomable>
+    </div>
+</div>
+<div class="row mt-3 justify-content-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi4.jpg" data-zoomable>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/draksumtso1.jpg" data-zoomable>
+    </div>
+</div>
+<div class="row mt-3 justify-content-center">
+    <div class="col-sm col-md-4 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/waterfall1.jpg" data-zoomable>
+    </div>
+</div>
+<div class="caption">
+    Various pictures about Nyingchi -- Mt Namcha Barwa, Draksum Tso, and Kading Tianfo Waterfall.
+</div>
+
+<div class="row mt-3 justify-content-center">
     <div class="col-sm col-md-8 mt-3 mt-md-0 align-self-center">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/potala1.jpg" data-zoomable>
     </div>
