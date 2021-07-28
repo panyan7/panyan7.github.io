@@ -8,7 +8,7 @@ nav: true
 
 Feel free to save and download any of these photos. However, I own the copyright of these photos, and I do not give images of full resolution for free. You should contact me at `py2019@outlook.com` if you want any pictures for commercial use.
 
-# Tibet, June 2021 (Coming)
+# Tibet, June 2021
 
 <div class="row mt-3 justify-content-center">
     <div class="col-sm mt-3 mt-md-0">
@@ -33,11 +33,6 @@ Feel free to save and download any of these photos. However, I own the copyright
 <div class="row mt-3 justify-content-center">
     <div class="col-sm col-md-10 mt-3 mt-md-0 align-self-center">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/qomolangmastars1.jpg" data-zoomable>
-    </div>
-</div>
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm col-md-10 mt-3 mt-md-0 align-self-center">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/qomolangmastars2.jpg" data-zoomable>
     </div>
 </div>
 <div class="caption">
@@ -71,20 +66,20 @@ Feel free to save and download any of these photos. However, I own the copyright
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/namchabarwa3.jpg" data-zoomable>
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi1.jpg" data-zoomable>
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi4.jpg" data-zoomable>
     </div>
 </div>
 <div class="row mt-3 justify-content-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi1.jpg" data-zoomable>
+    </div>
     <div class="col-sm mt-3 mt-md-0">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi2.jpg" data-zoomable>
     </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi3.jpg" data-zoomable>
-    </div>
 </div>
 <div class="row mt-3 justify-content-center">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi4.jpg" data-zoomable>
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi3.jpg" data-zoomable>
     </div>
     <div class="col-sm mt-3 mt-md-0">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/draksumtso1.jpg" data-zoomable>
