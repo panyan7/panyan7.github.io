@@ -102,8 +102,8 @@ Feel free to save and download any of these photos. However, I own the copyright
     <div class="col-sm mt-3 mt-md-0 align-self-center">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/potala1.jpg" data-zoomable>
     </div>
-    <div class="col-sm mt-3 mt-md-0 align-self-center">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/potala2.jpg" data-zoomable>
+    <div class="col-sm col-md-4 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/lhasa1.jpg" data-zoomable>
     </div>
 </div>
 <div class="caption">
@@ -113,9 +113,6 @@ Feel free to save and download any of these photos. However, I own the copyright
 <div class="row mt-3 justify-content-center">
     <div class="col-sm col-md-4 mt-3 mt-md-0">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/waterfall1.jpg" data-zoomable>
-    </div>
-    <div class="col-sm col-md-4 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/lhasa1.jpg" data-zoomable>
     </div>
     <div class="col-sm col-md-4 mt-3 mt-md-0">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/potala3.jpg" data-zoomable>
