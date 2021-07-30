@@ -31,6 +31,15 @@ Feel free to save and download any of these photos. However, I own the copyright
 </div>
 
 <div class="row mt-3 justify-content-center">
+    <div class="col-sm col-md-12 mt-3 mt-md-0 align-self-center">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/light.jpg" data-zoomable>
+    </div>
+</div>
+<div class="caption">
+    Let there be light.
+</div>
+
+<div class="row mt-3 justify-content-center">
     <div class="col-sm col-md-10 mt-3 mt-md-0 align-self-center">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/qomolangmastars1.jpg" data-zoomable>
     </div>
@@ -85,22 +94,29 @@ Feel free to save and download any of these photos. However, I own the copyright
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/draksumtso1.jpg" data-zoomable>
     </div>
 </div>
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm col-md-4 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/waterfall1.jpg" data-zoomable>
-    </div>
-</div>
 <div class="caption">
     Various pictures about Nyingchi -- Mt Namcha Barwa, Draksum Tso, and Kading Tianfo Waterfall.
 </div>
 
 <div class="row mt-3 justify-content-center">
-    <div class="col-sm col-md-8 mt-3 mt-md-0 align-self-center">
+    <div class="col-sm mt-3 mt-md-0 align-self-center">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/potala1.jpg" data-zoomable>
+    </div>
+    <div class="col-sm mt-3 mt-md-0 align-self-center">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/potala2.jpg" data-zoomable>
     </div>
 </div>
 <div class="caption">
     Potala Palace, Lhasa.
+</div>
+
+<div class="row mt-3 justify-content-center">
+    <div class="col-sm col-md-4 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/waterfall1.jpg" data-zoomable>
+    </div>
+    <div class="col-sm col-md-4 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/potala3.jpg" data-zoomable>
+    </div>
 </div>
 
 # Alaska, March 2020
