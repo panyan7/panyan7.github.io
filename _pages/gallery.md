@@ -10,114 +10,17 @@ Feel free to save and download any of these photos. However, I own the copyright
 
 Please click the link of each subtitle to see the full collection.
 
-# Tibet, June 2021
+# [Tibet, June 2021](panyan7.github.io/blog/2021/tibet)
 
 <div class="row mt-3 justify-content-center">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm-6 col-md-3 mt-3 mt-md-0">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/forest1.jpg" data-zoomable>
     </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/forest2.jpg" data-zoomable>
-    </div>
-</div>
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/forest3.jpg" data-zoomable>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/forest4.jpg" data-zoomable>
-    </div>
-</div>
-<div class="caption">
-    Adventure in a forest of Draksum Tso, Nyingchi. Warm, but also mysterious.
-</div>
-
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm col-md-12 mt-3 mt-md-0 align-self-center">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/light.jpg" data-zoomable>
-    </div>
-</div>
-<div class="caption">
-    Let there be light.
-</div>
-
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm col-md-10 mt-3 mt-md-0 align-self-center">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/qomolangmastars1.jpg" data-zoomable>
-    </div>
-</div>
-<div class="caption">
-    Mt Qomolangma and the milky way. Above the highest mountain in this world, there's the whole universe.
-</div>
-
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm col-md-10 mt-3 mt-md-0 align-self-center">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/qomolangma1.jpg" data-zoomable>
-    </div>
-</div>
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm col-md-10 mt-3 mt-md-0 align-self-center">
+    <div class="col-sm-6 col-md-3 mt-3 mt-md-0 align-self-center">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/qomolangma2.jpg" data-zoomable>
     </div>
-</div>
-<div class="caption">
-    Sunset at Mt Qomolangma.
-</div>
-
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/namchabarwa1.jpg" data-zoomable>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/namchabarwa2.jpg" data-zoomable>
-    </div>
-</div>
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/namchabarwa3.jpg" data-zoomable>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi4.jpg" data-zoomable>
-    </div>
-</div>
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi1.jpg" data-zoomable>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi2.jpg" data-zoomable>
-    </div>
-</div>
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/nyingchi3.jpg" data-zoomable>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/draksumtso1.jpg" data-zoomable>
-    </div>
-</div>
-<div class="caption">
-    Various pictures about Nyingchi -- Mt Namcha Barwa, Draksum Tso, and Kading Tianfo Waterfall.
-</div>
-
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm mt-3 mt-md-0 align-self-center">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/potala1.jpg" data-zoomable>
-    </div>
-    <div class="col-sm col-md-4 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/lhasa1.jpg" data-zoomable>
-    </div>
-</div>
-<div class="caption">
-    Potala Palace, Lhasa.
-</div>
-
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm col-md-4 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/waterfall1.jpg" data-zoomable>
-    </div>
-    <div class="col-sm col-md-4 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/potala3.jpg" data-zoomable>
+    <div class="col-sm col-md-4 mt-3 mt-md-0 align-self-center">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/light.jpg" data-zoomable>
     </div>
 </div>
 
