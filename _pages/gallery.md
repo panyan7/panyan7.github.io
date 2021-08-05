@@ -8,6 +8,8 @@ nav: true
 
 Feel free to save and download any of these photos. However, I own the copyright of these photos, and I do not give images of full resolution for free. You should contact me at `py2019@outlook.com` if you want any pictures for commercial use.
 
+Please click the link of each subtitle to see the full collection.
+
 # Tibet, June 2021
 
 <div class="row mt-3 justify-content-center">
@@ -119,59 +121,23 @@ Feel free to save and download any of these photos. However, I own the copyright
     </div>
 </div>
 
-# Alaska, March 2020
+# [Alaska, March 2020](panyan7.github.io/blog/2020/alaska)
 
 <div class="row mt-3 justify-content-center">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm-6 col-md-3 mt-3 mt-md-0">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/alaska1.jpg" data-zoomable>
     </div>
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm-6 col-md-3 mt-3 mt-md-0">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/alaska2.jpg" data-zoomable>
     </div>
-</div>
-<div class="row mt-3">
-    <div class="col-sm col-md-6 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/alaska3.jpg" data-zoomable>
-    </div>
-    <div class="col-sm col-md-4 offset-md-1 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/alaska4.jpg" data-zoomable>
-    </div>
-</div>
-<div class="caption">
-    Alaska adventure.
-</div>
-
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm-6 col-md-3 mt-3 mt-md-0">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/fairbanks.jpg" data-zoomable>
     </div>
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm-6 col-md-3 mt-3 mt-md-0">
         <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/aurora.jpg" data-zoomable>
     </div>
 </div>
-<div class="caption">
-    Left: The road to heaven. The clouds are like a hand pointing to the sun. Right: Aurora.
-</div>
 
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm col-md-4 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/cabinstars.jpg" data-zoomable>
-    </div>
-    <div class="col-sm col-md-4 offset-md-2 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/airplane3.jpg" data-zoomable>
-    </div>
-</div>
-<div class="row mt-3 justify-content-center">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/airplane1.jpg" data-zoomable>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/airplane2.jpg" data-zoomable>
-    </div>
-</div>
-<div class="caption">
-    Up Left: Cabin and a sky full of stars. Rest: Airplane sunset.
-</div>
 
 # iPhone Photography Collection
 I love phone photography. It is very common that you were walking out without your camera, where you suddenly found the decisive moment -- and you have to take the shot in a few seconds. Now your phone is your best tool under this situation.
