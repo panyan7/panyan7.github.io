@@ -10,7 +10,7 @@ Feel free to save and download any of these photos. However, I own the copyright
 
 Please click the link of each subtitle to see the full collection.
 
-# [Tibet, June 2021](https://panyan7.github.io/blog/2021/tibet)
+# [Top of the World](https://panyan7.github.io/blog/2021/tibet)
 
 <div class="row mt-3 justify-content-center">
     <div class="col-sm-6 col-md-3 mt-3 mt-md-0">
@@ -24,7 +24,7 @@ Please click the link of each subtitle to see the full collection.
     </div>
 </div>
 
-# [Alaska, March 2020](https://panyan7.github.io/blog/2020/alaska)
+# [The Snowy Place](https://panyan7.github.io/blog/2020/alaska)
 
 <div class="row mt-3 justify-content-center">
     <div class="col-sm-6 col-md-3 mt-3 mt-md-0">
