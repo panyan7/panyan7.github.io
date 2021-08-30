@@ -14,7 +14,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I'm a rising junior undergraduate student at [Carnegie Mellon University](https://www.cmu.edu) [School of Computer Science](https://cs.cmu.edu).
+I'm a junior undergraduate student at [Carnegie Mellon University](https://www.cmu.edu) [School of Computer Science](https://cs.cmu.edu).
 
 My research interest lies in the intersection of machine learning and theoretical computer science.
 
