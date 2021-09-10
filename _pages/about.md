@@ -16,7 +16,7 @@ social: true  # includes social icons at the bottom of the page
 
 I'm a junior undergraduate student at [Carnegie Mellon University](https://www.cmu.edu) [School of Computer Science](https://cs.cmu.edu).
 
-My research interest lies in the intersection of machine learning and theoretical computer science.
+My research interest is in machine learning and theoretical computer science. Specifically, I'm interested in designing provable algorithms for machine learning and data science and understanding the theoretical foundations of deep learning and non-convex optimization.
 
 For more information about my [CV](https://panyan7.github.io/cv/), [courses](https://panyan7.github.io/blog/2021/courses/) and [life](https://panyan7.github.io/personal/), feel free to explore this webpage.
 
