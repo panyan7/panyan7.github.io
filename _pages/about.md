@@ -14,7 +14,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I'm a junior undergraduate student at [Carnegie Mellon University](https://www.cmu.edu) [School of Computer Science](https://cs.cmu.edu).
+I'm a junior undergraduate student at [Carnegie Mellon University](https://www.cmu.edu) [School of Computer Science](https://cs.cmu.edu), studying computer science with an additional major in discrete mathematics and logic.
 
 My research interest is in machine learning and theoretical computer science. Specifically, I'm interested in designing provable algorithms for machine learning and data science and understanding the theoretical foundations of deep learning and non-convex optimization.
 
