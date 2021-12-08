@@ -14,12 +14,3 @@ nav: true
 
 [SURF Proposal](https://panyan7.github.io/blog/2021/surf/)
 
-## Resources
-
-[Algorithms for Competitive Programming](https://panyan7.github.io/projects/algorithm/)
-
-[Math Toolkits](https://panyan7.github.io/assets/pdf/math_tools.pdf)
-
-## Miscellaneous
-
-[Graduate Courses](https://panyan7.github.io/assets/pdf/grad_courses.pdf)
