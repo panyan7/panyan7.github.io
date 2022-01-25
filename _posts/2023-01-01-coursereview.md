@@ -4,84 +4,81 @@ title: Course Review
 date:   2023-01-01 00:00:00
 description: My journey at CMU.
 ---
-**My goal:** B.S. in CS, Concentration in Machine Learning, Minor in Mathematical Sciences, and maybe an additional major instead of minor.
+**My background:** Entered CMU with StatML major and transferred to CS in sophomore year. Went to a traditional Chinese high school (with Gaokao as the main goal), so got a very solid math and science education. Had some limited competitive math experiences and no competitive programming experience. Could program in Python and matlab and knew some machine learning.
 
-&#9733; : The courses which I think were worth attending CMU for. Courses without a star can also be good, but they are not that special.
+**My goal:** B.S. in Computer Science, additional major in Discrete Mathematics and Logic.
+
+&#9733; The courses which I think were worth attending CMU for. Courses without a star can also be good, but they are not that special.
 
 ## Freshman
 
 ### Fall 2019
 - 15-122 Principles of Imperative Computation
-  - An introduction into serious computer science, since 15-112 teaches more about "programming" than "computer science".
   - Mostly about concepts in C and the simplest data structures and algorithms.
   - The exams and homeworks should not be hard for CS majors, and it is indeed the easiest CS course I believe.
-  - Contracts and point-to reasonings were not fun (although quite useful), guessing what Iliano meant in the question statement was not fun, but the programming homeworks were quite interesting. I actually got top 1 in the Peg scoreboard in terms of the speed of my program to solve the board using backtracking.
+  - The lectures are boring, problems are boring. The programming homeworks were fun however. I got top 1 on scoreboard for the Peg assignment.
 - &#9733; 21-127 Concepts of Mathematics
-  - A very interesting introduction to many areas in mathematics, especially those related to computer science.
-  - The course overed a broad number of areas, mainly discrete mathematics, including algebra, real analysis, number theory, combinatorics.
-  - It introduced formal definition of mathematical objects as well as practiced proof-writing skills, which would be crucial for math and CS.
+  - A great introduction to pure mathematics.
+  - The course overed a broad number of areas, including algebra, real analysis, number theory, combinatorics. Greggo's lectures were very hard, but they were really rewarding.
 - 21-259 Calculus in Three Dimensions
-  - Extremely easy: I got 101/100 for the final grade.
+  - My section was very easy (I got 101/100 for the final grade).
   - Highly recommend to take 21-268 or 21-269. I would really recommend taking some time to consider the courses before you take them, because I didn't know these options.
 - &#9733; 66-107 Modeling Complex Systems
-  - Amazing area about computational social science. More is different.
+  - Computational social science is an amazing area that shows you "more is different" in the human world.
+  - Actually I wanted to work on computational social science during high school when I first learned this field in an elective class.
   - The professor John Miller is really friendly and nice. He knows pretty much about a vast number of topics in social sciences.
-  - Due to my previous experience, I taught the whole class how to program in NetLogo as well as helped debugging their programs, so I actually worked as a free TA for the class.
-  - Worked on a project that simulates the dynamics of social gatherings.
+  - Worked on a project that simulates the dynamics of social gatherings. I also assisted many classmates in programming for their projects.
 - 76-100 Reading and Writing in Academic Context
-  - Just a course for international students, skip it if you can.
-  - The professor is great and met many great friends.
-  - Minimal work.
+  - Just a course for international students, skip it if you can. Hedi Wright is so nice. Minimal work.
 
 **Workload:** light, got plenty of sleep and time with friends.
 
 ### Spring 2020
-- &#9733;&#9733; 15-251 Great Ideas in Theoretical Computer Science
-  - My favorite course so far at CMU, which is quite surprising given the amount of time I spent on this course and the pressure it once brought me. I was always very anxious on Wednesday afternoon, and worked many all-nighters after the pandemic outbreak.
-  - The course is being notorious due to its massive workload, the conceptual difficulty for freshman students, and the pressure in writing sessions and exams.
+- &#9733; 15-251 Great Ideas in Theoretical Computer Science
+  - Although I gave many stars to many courses in this list, but if you ask me what is the best course at CMU, my answer is 251. For freshman students that knew nothing about computer science, 251 is like the door to a completely new world, where they are no longer constrained to learning how to use computers, but how to understand the world through the "computational lenses."
+  - The course is being notorious due to its massive workload, the conceptual difficulty for freshman students, and the pressure in writing sessions and exams. I was always very anxious on Wednesday afternoon, and worked many all-nighters after the pandemic outbreak.
   - There were many topics covered, including formal languages, DFA, Turing machines, undecidability, complexity theory (P vs NP), algorithms (randomized/approximation), graph theory, modular arithmetic and group theory, cryptography.
-  - Teamwork is encouraged in 251, so choose your teammate wisely. My teammates were great and I enjoy tackling these super hard group and open problems with them.
+  - Teamwork is very important, so choose your teammate wisely. My teammates were great and I enjoy tackling these super hard group and open problems with them.
   - I love Anil Ada and his classes! He cares about his students and is enthusiatic towards teaching and improving his course contents. 
 - &#9733; 15-150 Principles of Functional Programming
-  - Functional programming was quite new, but it's fascinating. It's probably the cleanest way to write code and high order functions changes your way of thinking about code.
-  - The homeworks were not that easy. Since they don't let you see the autograder result, you need to be extremely careful in the programming labs. Written parts can contain very long proof, and some might find it tedious, but I found them were quite interesting although I never get them correct.
-  - Michael Erdmann is a great professor, very friendly and cute.
+  - Functional programming was quite new to me, but it's interesting. It's probably the cleanest way to write code and high order functions changes your way of thinking about code.
+  - Programming homeworks with SML were fun, although they were not that easy. Sometimes writing function code is like solving puzzles.
 - 21-241 Matrices and Linear Transformations
   - A basic linear algebra class. Mostly about calculations and some very easy proofs. 
   - Quite easy, take 21-242 if possible.
 - 21-270 Introduction to Mathematical Finance
-  - A required course for computational finance majors and minors. I wanted to minor in computational finance at that time, but the course was quite boring so I gave up that thought.
-  - The math part was just simple high school math. Understanding the terms in finance is a more difficult task.
+  - I wanted to minor in computational finance before I went to college, but the course was quite boring so I gave up that thought. But that's probably not what quantitative research is really about. I might still consider a career in quantitative finance if research doesn't work well for me.
+  - The math part was just simple high school math. Understanding the finance terms is a more difficult task.
 - 76-101 Interpretation and Argument
-  - A normal writing course.
+  - A typical college-level writing course.
   - Minimal work.
 
 **Workload:** moderate-heavy, spent most time on 251.
 
 ### Summer 2020
-- &#9733; 15-213 Introduction to Computer Systems
+- 15-213 Introduction to Computer Systems
   - Great introductory course to computer systems and very famous even for non-CMU students.
-  - Not hard to get a good grade since the labs weights 50% and you are provided autograders, but the final exam was extremely hard, especially those questions about concurrency.
+  - Getting a good grade is probably easier than the other CS courses since the labs weights 50%, but the final exam was quite hard, especially concurrency problems.
   - The labs were certainly interesting but they could be very time consuming, so plan your time wisely. I began working on Cache Lab the very last day and it took me exactly 24 hours (with no breaks). Proxy Lab is a nightmare for me since I began working on it after the final and only had less than one day.
 - 21-325 Probability
-  - Harder than I expected, very fast-paced in the summer session.
+  - Harder than I expected. It was very fast-paced in the summer session.
   - A proof-based course, with the goal to prove the central limit theorem, the law of large numbers, etc. The proofs were heavily based on mathematical analysis, so it's recommended to take 21-269 or 21-355 beforehand.
   - The take-home exam felt like a Putnam competition and was definitely not related to the homeworks.
 
 **Note:** Don't take summer courses since they are very boring and costly. Do research if you don't have or don't want an internship.
 
-**Other commitment:** Case competition during the final week of first half...
+**Other commitments:** Case competition during the final week of first half...
 
 **Workload:** death in the first half, moderate in the second half.
 
 ### Fall 2020
 - 10-701 Introduction to Machine Learning (PhD)
   - Although there's a "PhD" in the title, only 30% are PhD students. Most are masters or undergraduates, and people's background varies significantly.
-  - The grading was friendly, as 50% of the students get curved to an A. The final exam was made hard intentionally, but not that hard. Most homeworks and exam questions are about theory, but there's a project to give you hands-on experience.
+  - The grading was not bad as 50% of the students get curved to an A, and the final exam was made hard intentionally. Most homeworks and exam questions are about theory, but different from 10-301/10-315 there's a project to give you hands-on experience.
   - In general, quite disappointing, but still recommended over the other intro courses.
 - &#9733; 15-210 Parallel and Sequential Data Structures and Algorithms
   - A well-taught solid theory course.
-  - The course is curved and graded based on a "bucket" system, which means if you get 80% on the quizzes and labs then you get 100% of the grades.
+  - Grading was extremely friendly. If you get 80% points on the quizzes and labs then you get 100% of the grades.
   - The midterm exams test your deeper understanding of the algorithms, and the final was extremely hard. But, they were curved.
   - The most time-consuming part of the homeworks is programming in SML. Most labs consists of only one LeetCode Hard level problem, which should be much simpler if we just use C++.
 - 21-355 Principles of Real Analysis
@@ -89,48 +86,93 @@ description: My journey at CMU.
   - If you are a great self-learner you can probably learn all the stuff all by yourself through reading the book. I don't recommend taking it if you do not plan to do a math major/minor.
 - 79-104 Global Histories
   - The topic was *Genocides and Weapons of Mass Destruction*. It's not the most interesting topic, but it's good to know a bit about it.
-  - The workload was not very light as I expected, maybe because I'm a little perfectionist. The grading was very nice and gentle however.
+  - The workload was not very light as I expected. My TA was very nice and gave good grades to people however, but other TAs might not.
 - 15-295 Competition Programming and Problem Solving
   - More like a club than a course. I plan to take more in the future.
-  - If you know pretty much about competitive programming, it almost takes you no time. I never did competitive programming before, only some LeetCode problems, but I only spent like ~20 hours in total (the whole semester, average 1.5h per week) on it for the semester to get an A.
+  - If you know pretty much about competitive programming, it almost takes you no time. I never did competitive programming before, only some LeetCode problems, but I only spent like 1.5h per week on it for the semester to get an A.
 
 **Workload:** moderate-light.
 
-I was always quite anxious in most time of this semester due to the pressure of grad school and other personal stuff. Not a easy time for me. Fortunately got enough sleep and fell in love with competitive programming during the winter break, so I can finally begin to focus on what I enjoy in the next semester.
+I was always quite anxious in most time of this semester due to some personal problems. Not a easy time for me. Fortunately got enough sleep and fell in love with competitive programming during the winter break, so I can finally begin to focus on what I enjoy in the next semester.
 
 ## Spring 2021
-- &#9733;&#9733; 10-725 Convex Optimization
-  - A course that I originally thought would not be taking, but ended up as the first non-introductory machine learning course I took. Yuanzhi Li is inspiring and he completely changed this course from a statistics course into a machine learning theory course. According to Yuanzhi, for most of us, convex optimization is no more than `optim.SGD`, so the focus is more on non-convex optimization for machine learning. Right now I really hope CMU reopens the course 15-859BB *Machine Learning Theory* (originally taught by Avrim Blum but he has left CMU).
+- &#9733; 10-725 Convex Optimization
+  - A course that I originally thought would not be taking, but ended up as the first non-introductory machine learning course I took. Yuanzhi Li is inspiring and he completely changed this course from a statistics course into a machine learning theory course. For most of us, convex optimization is no more than `optim.SGD`, so the focus is more on non-convex optimization for machine learning.
+  - Everyone got an A. 28 grace days in total. You get A- if you solved half the homework problems. Really minimal work.
+  - But the bonus problems were so interesting. I actually spent 60+ hours solving one of them but failed. It turned out to be an open problem.
 - &#9733; 15-462 Computer Graphics
-- &#9733; 16-385 Computer Vision
+  - Computer graphics is an awesome area that I always wanted to learn more about. This course offers a great introduction to many araes of computer graphics, including mesh editing, ray tracing, and animation.
+  - The programming assignments were very well-designed. I felt sense of achievement when I finish the assignments and render scenes and objects that I designed myself.
+  - It's not just a CS class, but also an art class.
+- 16-385 Computer Vision
+  - Mostly about traditional computer vision rather than deep learning.
 - 36-226 Introduction to Statistical Inference
+  - I originally did this for the ML concentration, but they later removed this requirement, and I also gave up on the ML concentration because I want to do additional major, so...
+  - Tons of homework and exams. I did 5 tests and 3 exams in one semester for this single course.
+  - Topics are boring. Mostly just "how to become a subset of R".
 - 85-219 Biological Foundations of Behavior
+  - This course is actually more interesting than I expected. Although there are no in person experiments, the topics are interesting. I learned how the body works, how I perceive what's happening in the world and react to it.
 - 15-295 Competition Programming and Problem Solving
-  - I started treating 15-295 as a club for entertainment rather than a course. Competitive programming and algorithms are awesome!
-- 40240432 Formal Languages and Automata (Tsinghua University)
-  - A required CS theory course for CS majors at THU. The content should be similar to 15-453 *Formal Languages, Automata, and Computability*, and covers more in depth than 15-251 at CMU.
-- (Audit) Introduction to Artificial Intelligence (Tsinghua University)
+  - I started treating 15-295 as a club for entertainment rather than a course. However, due to massive workload, I spent very little time on it. I started doing Codeforces competition during winter break and got to Candidate Master (with some luck), and back to Expert the next day. Then, my rating falls for every two contests and I cannot get back to Candidate Master, so I was frustrated and didn't spent too much time on it. But I can still get an A easily.
+- [Host Institution Program at Tsinghua University] Formal Languages and Automata
+  - I participated in the host instition program at Tsinghua University, so I'm finally back to school after spending almost a year taking online courses. Great to meet some high school friends again and study with them.
+  - A required course for CS majors at THU. The content should be similar to 15-453 *Formal Languages, Automata, and Computability*, and covers more than 15-251 at CMU.
+  - I took this course since most courses are out of space when I register, so I just chose this "theory-oriented" course that my friends at THU were taking. One of my goals is to see how top students in China are like compared to the US. I'm quite disappointed that both the instructor and the students are not very passionate about this field, and I feel like people are just taking this course to fulfill their graduation requirement.
+  - Since I don't get credits for this course, I didn't spend as much time on this, but I was quite surprised that I find the exam hard, since I feel like I already learned the topics well. Probably that's the difference between top universities in China and the US.
 
 **Other commitments:** ML Research @ MultiComp Lab, Tsinghua University host institution program, Codeforces competitions.
 
-**Workload:** TBD (expected death)
+**Workload:** Death.
 
-Participated in the host instition program at Tsinghua University, so finally back to school after spending almost a year taking online courses. Seven courses in a semester plus research seems extremely challenging for me, but I'll try to keep myself productive throughout the semester.
-
-## Preliminary Future Schedule
 ## Summer 2021
 
 ML Research @ MultiComp Lab
 
-### Fall 2021
+## Fall 2021
+- (TA) 10-725 Convex Optimization
+  - The major works are grading and leading office hours since there are no recitations. One additional work is that Yuanzhi doesn't provide solutions to the homework problems, so I was actually the person responsible for writing the reference solutions to all the homework problems.
+- &#9733; 15-859 Special Topics in Theory: Algorithms for Big Data
+  - This is a graduate-level theory course taught by David Woodruff. It's mainly about sketching and streaming algorithms, and most problems are just (randomized) linear algebra.
+  - This is the first time I take a real "PhD-level" course, and the first time I feel like I'm the only stupid guy in the classroom. Solving the homeworks were challenging and fun, so I am pretty sure that I want to do theory research.
+  - Don't worry about grading for this type of courses. Also DW gave me many extensions for the homeworks and I'm very grateful for that.
+  - Studied gradient descent for low rank approximation and actually made some progress on improving the result of one paper, although it failed eventually. But that's actually pretty cool.
+- 15-451 Algorithm Design and Analysis
+  - It's good to do competitive programming. I skipped most lectures but still managed to do well in the exams.
+- &#9733; 15-459 Quantum Computation
+  - The homeworks were optional which was great. I actually skipped about half of them. But that made exams more stressful. Luckily I solved almost all problems in all exams.
+  - Part of the reason that I took this course was Ryan O'Donnell, who was a great instructor and inspiration. 
+  - Another reason I took this course was, Yuanzhi Li gave a lecture on quantum optimization for the last lecture of 10-725, which no one understood. But after that, I see that there are so many opportunities in quantum computing, so I think I should learn some, and maybe it will give me new research ideas in the future.
+- 21-373 Algebraic Structures
+  - 21-373 with Richard Statman was very gentle. Grading was only based on 8 homeworks and 2 take-home quizzes.
+- 07-300 Research and Innovation in Computer Science
+  - Finding professor in machine learning or theory is hard. I wanted to do ML theory and optimization. Eventually, I asked Yuanzhi Li, who I TAed for this semester, to be my mentor and he gave me a project on adaptive algorithms for non-convex optimization.
+- 15-295 Competition Programming and Problem Solving
+  - Danny increased the difficulty of 15-295 and now the easy problems don't count, so I can no longer get an A in a few hours. However, I met some great friends in this course, and taking this course in person was much better than solving problems alone at home!
+  - I really spend some time practicing competitive programming this semester. As a result, I was qualified for the CMU ICPC team, although I believe I could have done better in the selection rounds. I also became Master on Codeforces while I was still an Expert before this semester, and my rating went from 1800 to 2100. Quite proud of my achievement as someone who never did competitive programming in high school.
+
+**Other commitments:** Non-convex optimization research, ML Research @ MultiComp Lab, preparing for ICPC.
+
+**Workload:** Moderate.
+
+**Miscellaneous:** Decided to do theoretical computer science.
+
+## Preliminary Future Schedule
+## Spring 2022
+- (TA) 10-725 Convex Optimization
+- &#9733; 15-751 A Theorist's Toolkit
+  - Ryan teaches you many tricks and details that might bother beginners when doing CS theory research that are typically not taught in many classes. You might take a long time to learn them yourself.
+- 21-484 Graph Theory
+- 21-356 Principles of Real Analysis II
+- 80-405 Game Theory
+- 73-102 Principles of Microeconomics
+- 07-400 Research Practicum in Computer Science
+- 15-295 Competition Programming and Problem Solving
+
+**Other commitments:** Non-convex optimization research, ML Research @ MultiComp Lab, ICPC.
+
+## Fall 2022
 - TBD
 
-### Spring 2022
-- TBD
-
-### Fall 2022
-- TBD
-
-### Spring 2023
+## Spring 2023
 - TBD
 
