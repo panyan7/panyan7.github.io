@@ -45,7 +45,7 @@
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: "title" %}
           {% for p in sorted_pages %}
-          {% if p.nav and p.autogen == nil and p.title != "research" %}
+          {% if p.nav and p.autogen == nil and p.title != "Research" %}
           <li class="nav-item {% if page.title == p.title %}active{% endif %}">
               <a class="nav-link" href="{{ p.url | relative_url }}">
                 {{ p.title }}
