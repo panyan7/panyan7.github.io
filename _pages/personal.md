@@ -7,8 +7,9 @@ nav: true
 ---
 
 - My hometown is Beijing, China.
-- I did my middle school and high school at the Early Development Program of [High School Affiliated to Renmin University of China (RDFZ)](https://en.wikipedia.org/wiki/High_School_Affiliated_to_Renmin_University_of_China).
+- I spent 7 years at [High School Affiliated to Renmin University of China (RDFZ)](https://en.wikipedia.org/wiki/High_School_Affiliated_to_Renmin_University_of_China) for middle school and high school, where I was in the Early Development Program.
 - I am very interested in photography, especially landscape photography and art photography.
-- I listen to various genres of electronic music, including progressive trance, (traditional) progressive house, deep house, and melodic dubstep.
+- I am a fan of [trance music](https://en.wikipedia.org/wiki/Trance_music), and also some traditional house music and melodic dubstep.
 - I play soccer every week (amortized).
-- I do competitive programming sometimes. I'm also part of the CMU ICPC team.
+- I do competitive programming sometimes. I participate in Codeforces contest and ICPC.
+- I love nature, landscape, and traveling. I would rather go to Alaska than New York during holidays.
