@@ -17,3 +17,5 @@ nav: true
 [Milestone 3](https://panyan7.github.io/assets/pdf/milestone3.pdf)
 
 [Milestone 4](https://panyan7.github.io/assets/pdf/milestone4.pdf)
+
+[Milestone 5](https://panyan7.github.io/assets/pdf/milestone5.pdf)
