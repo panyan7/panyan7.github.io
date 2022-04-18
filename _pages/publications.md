@@ -2,8 +2,8 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Nothing yet.
-years: [2020]
+description: Coming soon!
+years: [2022]
 nav: true
 ---
 

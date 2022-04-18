@@ -5,7 +5,7 @@ title: CV
 description: My CV.
 nav: true
 ---
-[**Download PDF**](https://panyan7.github.io/assets/pdf/yanpan_cv_mar22.pdf)
+[**Download PDF**](https://panyan7.github.io/assets/pdf/yanpan_cv_apr22.pdf)
 
-<embed src="https://panyan7.github.io/assets/pdf/yanpan_cv_mar22.pdf" type="application/pdf" width="100%" height="600px" />
+<embed src="https://panyan7.github.io/assets/pdf/yanpan_cv_apr22.pdf" type="application/pdf" width="100%" height="600px" />
 
