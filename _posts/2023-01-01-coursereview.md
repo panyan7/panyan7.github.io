@@ -10,11 +10,20 @@ description: My journey at CMU.
 
 &#9733; The courses which I think were worth attending CMU for. Courses without a star can also be good, but they are not that special.
 
+## Fall 2022
+- 10-813 Advanced Topics in Machine Learning Theory
+- 15-440 Distributed Systems
+- 21-301 Combinatorics
+- 21-341 Linear Algebra
+- 88-120 Reason, Passion, and Cognition
+
+
 ## Spring 2022
 - (TA) 10-725 Convex Optimization
 - &#9733; 15-751 A Theorist's Toolkit
   - Ryan teaches you many tricks and details that might bother beginners when doing CS theory research that are typically not taught in many classes. You might take a long time to learn them yourself.
-- 21-484 Graph Theory
+- &#9733; 21-484 Graph Theory
+  - Wesley Pegden is such a nice guy!
 - 21-356 Principles of Real Analysis II
 - 80-405 Game Theory
 - 73-102 Principles of Microeconomics
@@ -33,12 +42,12 @@ description: My journey at CMU.
   - This is the first time I take a real "PhD-level" course, and the first time I feel like I'm the only stupid guy in the classroom. Solving the homeworks were challenging and fun, so I am pretty sure that I want to do theory research.
   - Don't worry about grading for this type of courses. Also DW gave me many extensions for the homeworks and I'm very grateful for that.
   - Studied gradient descent for low rank approximation and actually made some progress on improving the result of one paper, although it failed eventually. But that's actually pretty cool.
-- 15-451 Algorithm Design and Analysis
-  - It's good to do competitive programming. I skipped most lectures but still managed to do well in the exams.
 - &#9733; 15-459 Quantum Computation
   - The homeworks were optional which was great. I actually skipped about half of them. But that made exams more stressful. Luckily I solved almost all problems in all exams.
   - Part of the reason that I took this course was Ryan O'Donnell, who was a great instructor and inspiration. 
   - Another reason I took this course was, Yuanzhi Li gave a lecture on quantum optimization for the last lecture of 10-725, which no one understood. But after that, I see that there are so many opportunities in quantum computing, so I think I should learn some, and maybe it will give me new research ideas in the future.
+- 15-451 Algorithm Design and Analysis
+  - It's good to do competitive programming. I skipped most lectures but still managed to do well in the exams.
 - 21-373 Algebraic Structures
   - 21-373 with Richard Statman was very gentle. Grading was only based on 8 homeworks and 2 take-home quizzes.
 - 07-300 Research and Innovation in Computer Science
