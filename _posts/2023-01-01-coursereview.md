@@ -46,7 +46,7 @@ description: My journey at CMU.
   - The homeworks were optional which was great. I actually skipped about half of them. But that made exams more stressful. Luckily I solved almost all problems in all exams.
   - Part of the reason that I took this course was Ryan O'Donnell, who was a great instructor and inspiration. 
   - Another reason I took this course was, Yuanzhi Li gave a lecture on quantum optimization for the last lecture of 10-725, which no one understood. But after that, I see that there are so many opportunities in quantum computing, so I think I should learn some, and maybe it will give me new research ideas in the future.
-- 15-451 Algorithm Design and Analysis
+- &#9733; 15-451 Algorithm Design and Analysis
   - It's good to do competitive programming. I skipped most lectures but still managed to do well in the exams.
 - 21-373 Algebraic Structures
   - 21-373 with Richard Statman was very gentle. Grading was only based on 8 homeworks and 2 take-home quizzes.
