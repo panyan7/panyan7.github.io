@@ -14,10 +14,10 @@ nav: true
 - I am very interested in photography, especially landscape photography and art photography.
 <div class="row mt-3 justify-content-center">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/cmu.jpg" data-zoomable>
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/cmu.jpg" data-zoomable>
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/photography/qomolangma.jpg" data-zoomable>
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/qomolangma.jpg" data-zoomable>
     </div>
 </div>
 - Music-wise, I mostly listen to [trance music](https://en.wikipedia.org/wiki/Trance_music) and classical music. I also listen to other electronic music genres sometimes.
