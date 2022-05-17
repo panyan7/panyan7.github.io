@@ -22,7 +22,7 @@ nav: true
 </div>
 - Music-wise, I mostly listen to [trance music](https://en.wikipedia.org/wiki/Trance_music) and classical music. I also listen to other electronic music genres sometimes.
   - [Reverie -- Above & Beyond](https://www.youtube.com/watch?v=FkPoYPQvgxQ)
-  - [Fireisland -- Aly & Fila](https://www.youtube.com/watch?v=WaXcKHJplNs)
+  - [Fireisland -- Solarstone/Aly & Fila](https://www.youtube.com/watch?v=WaXcKHJplNs)
   - [Strobe -- deadmau5](https://www.youtube.com/watch?v=tKi9Z-f6qX4)
   - [Symphony No.5 in D minor -- Shostakovich](https://www.youtube.com/watch?v=haGfzmg9HJI)
 - I play soccer every week. I became a Real Madrid fan after 2014 UCL Final. I also play FIFA sometimes.
