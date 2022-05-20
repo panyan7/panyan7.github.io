@@ -10,7 +10,7 @@ nav: true
 - My hometown is Beijing, China.
 - I spent 7 years at [High School Affiliated to Renmin University of China (RDFZ)](https://en.wikipedia.org/wiki/High_School_Affiliated_to_Renmin_University_of_China) for middle school and high school, where I was in the Early Development Program (EDP).
 - Although I often identify myself as a math and CS nerd, I love art, literature, and classical Chinese poetry.
-  - 昨夜西风凋碧树，独上高楼，望尽天涯路。欲寄彩笺兼尺素，山长水阔知何处？--晏殊
+  - 回首向来萧瑟处，归去，也无风雨也无晴。--[苏轼](https://en.wikipedia.org/wiki/Su_Shi) [(English)](https://panyan7.github.io/blog/2021/poem/)
 - I am very interested in photography, especially landscape photography and art photography.
 <div class="row mt-3 justify-content-center">
     <div class="col-sm mt-3 mt-md-0">
