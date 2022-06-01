@@ -9,8 +9,8 @@ nav: true
 - My Chinese name: 潘言.
 - My hometown is Beijing, China.
 - I spent 7 years at [High School Affiliated to Renmin University of China (RDFZ)](https://en.wikipedia.org/wiki/High_School_Affiliated_to_Renmin_University_of_China) for middle school and high school, where I was in the Early Development Program (EDP).
-- Although I often identify myself as a math and CS nerd, I love art, literature, and classical Chinese poetry.
-  - 回首向来萧瑟处，归去，也无风雨也无晴。--[苏轼](https://en.wikipedia.org/wiki/Su_Shi) [(English)](https://panyan7.github.io/blog/2021/sushi/)
+- Although I often identify myself as a math and CS nerd, I love art and literature.
+  - My Life Philosophy: 回首向来萧瑟处，归去，也无风雨也无晴。--[苏轼](https://en.wikipedia.org/wiki/Su_Shi) [(English)](https://panyan7.github.io/blog/2021/sushi/)
 - I am very interested in photography, especially landscape photography and art photography.
 <div class="row mt-3 justify-content-center">
     <div class="col-sm mt-3 mt-md-0">
@@ -24,7 +24,6 @@ nav: true
   - [Reverie -- Above & Beyond](https://www.youtube.com/watch?v=FkPoYPQvgxQ)
   - [Fireisland -- Solarstone/Aly & Fila](https://www.youtube.com/watch?v=WaXcKHJplNs)
   - [Strobe -- deadmau5](https://www.youtube.com/watch?v=tKi9Z-f6qX4)
-  - [Symphony No.5 in D minor -- Shostakovich](https://www.youtube.com/watch?v=haGfzmg9HJI)
 - I play soccer every week. I became a Real Madrid fan after 2014 UCL Final. I also play FIFA sometimes.
 - I love nature, landscape, and traveling. I enjoy hiking and cycling.
 - I do competitive programming sometimes.
