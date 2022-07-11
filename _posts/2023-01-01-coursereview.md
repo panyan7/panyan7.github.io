@@ -4,9 +4,9 @@ title: Course Review
 date:   2023-01-01 00:00:00
 description: My journey at CMU.
 ---
-**My background:** I entered CMU as StatML major and transferred to CS in sophomore fall. I went to a Chinese high school ("Gaokao" class). I had some (limited) competitive math backgrounds, and no competitive programming experience.
+**My background:** I entered CMU as StatML major and transferred to CS in sophomore fall. I went to a Chinese high school (where people study for "Gaokao"). I had some (limited) competitive math backgrounds, and no competitive programming experience.
 
-**My goal:** B.S. in Computer Science, additional major in Discrete Mathematics and Logic. Originally planned for concentration in machine learning and minor in math, but switched to double major in junior year.
+**My goal:** B.S. in Computer Science, additional major in Discrete Mathematics and Logic. Originally planned for concentration in machine learning and minor in math, but later thought machine learning was boring and switched to double major in junior year.
 
 &#9733; The courses which I think were worth attending CMU for. Courses without a star can also be good, but they are not that special.
 
@@ -23,20 +23,24 @@ description: My journey at CMU.
 - &#9733; 15-751 A Theorist's Toolkit
   - Ryan teaches you many tricks and details that might bother beginners when doing CS theory research that are typically not taught in many classes. You might take a long time to learn them yourself.
 - &#9733; 21-484 Graph Theory
-  - Wesley Pegden is such a nice guy!
+  - Wesley Pegden is a nice guy!
 - 21-356 Principles of Real Analysis II
+  - Manifolds are pretty hard.
 - 80-405 Game Theory
+  - A very easy class. All gradings are based on homeworks.
+  - I hope SCS would launch an algorithmic game theory class.
 - 73-102 Principles of Microeconomics
+  - Minimal work. Found out that the course has a Piazza after chatting with a classmate after final.
 - 07-400 Research Practicum in Computer Science
+  - Worked with Yuanzhi Li on adaptive algorithms.
 - 15-295 Competition Programming and Problem Solving
+  - Participated in ICPC and won a silver medal!
 
 **Other commitments:** Non-convex optimization research, ML Research @ MultiComp Lab, ICPC.
 
 
 
 ## Fall 2021
-- (TA) 10-725 Convex Optimization
-  - The major works are grading and leading office hours since there are no recitations. One additional work is that Yuanzhi doesn't provide solutions to the homework problems, so I was actually the person responsible for writing the reference solutions to all the homework problems.
 - &#9733; 15-859 Special Topics in Theory: Algorithms for Big Data
   - This is a graduate-level theory course taught by David Woodruff. It's mainly about sketching and streaming algorithms, and most problems are just (randomized) linear algebra.
   - This is the first time I take a real "PhD-level" course, and the first time I feel like I'm the only stupid guy in the classroom. Solving the homeworks were challenging and fun, so I am pretty sure that I want to do theory research.
@@ -47,14 +51,17 @@ description: My journey at CMU.
   - Part of the reason that I took this course was Ryan O'Donnell, who was a great instructor and inspiration. 
   - Another reason I took this course was, Yuanzhi Li gave a lecture on quantum optimization for the last lecture of 10-725, which no one understood. But after that, I see that there are so many opportunities in quantum computing, so I think I should learn some, and maybe it will give me new research ideas in the future.
 - &#9733; 15-451 Algorithm Design and Analysis
-  - It's good to do competitive programming. I skipped most lectures but still managed to do well in the exams.
+  - It's good to do competitive programming. I skipped most lectures but still managed to do well in the exams. Finished the long answers on final exam in 30 minutes (and spend the rest 2h30m on a few details that I can't remember for short answers).
 - 21-373 Algebraic Structures
   - 21-373 with Richard Statman was very gentle. Grading was only based on 8 homeworks and 2 take-home quizzes.
 - 07-300 Research and Innovation in Computer Science
-  - Finding professor in machine learning or theory is hard. I wanted to do ML theory and optimization. Eventually, I asked Yuanzhi Li, who I TAed for this semester, to be my mentor and he gave me a project on adaptive algorithms for non-convex optimization.
+  - This course is more structured for applied CS research. For theoretical research, things are different.
+  - I wanted to do ML theory and optimization, but finding professor in machine learning or theory is hard. Luckily I found one.
 - 15-295 Competition Programming and Problem Solving
   - Danny increased the difficulty of 15-295 and now the easy problems don't count, so I can no longer get an A in a few hours. However, I met some great friends in this course, and taking this course in person was much better than solving problems alone at home!
   - I really spend some time practicing competitive programming this semester. As a result, I was qualified for the CMU ICPC team, although I believe I could have done better in the selection rounds. I also became Master on Codeforces while I was still an Expert before this semester, and my rating went from 1800 to 2100. Quite proud of my achievement as someone who never did competitive programming in high school.
+- (TA) 10-725 Convex Optimization
+  - The major works are grading and leading office hours since there are no recitations. One additional work is that Yuanzhi doesn't provide solutions to the homework problems, so I was actually the person responsible for writing the reference solutions to all the homework problems.
 
 **Other commitments:** Non-convex optimization research, ML Research @ MultiComp Lab, preparing for ICPC.
 
