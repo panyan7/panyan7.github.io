@@ -14,4 +14,3 @@ nav: true
 - Music-wise, I mostly listen to electronic music (mostly [trance music](https://en.wikipedia.org/wiki/Trance_music)) and classical music.
 - I play soccer very frequently. I became a Real Madrid fan after 2014 UCL Final. I also play FIFA sometimes.
 - I love nature, landscape, and traveling. I enjoy hiking and cycling.
-- I enjoy Beijing and Sichuan cuisine; drink coffee and tequila.
