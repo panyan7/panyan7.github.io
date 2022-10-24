@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Coming soon!
+description: Publications and Preprints
 years: [2022]
 nav: true
 ---
