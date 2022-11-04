@@ -6,7 +6,7 @@ description: Undergraduate @ CMU SCS
 
 profile:
   align: right
-  image: panyan.jpg
+  image: my_portrait.jpg
   address: >
 
 news: true  # includes a list of news items
