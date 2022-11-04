@@ -79,7 +79,7 @@ collections:
     defaults:
       layout: post
       title: News
-    output: true
+    output: false
     permalink: /news/:path/
   projects:
     output: true
