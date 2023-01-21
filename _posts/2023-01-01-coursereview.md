@@ -4,22 +4,23 @@ title: Course Review
 date:   2023-01-01 00:00:00
 description: My journey at CMU.
 ---
-**My background:** I entered CMU as StatML major and transferred to CS in sophomore fall. I went to a Chinese high school (where people study for "Gaokao"). I had some (limited) competitive math backgrounds, and no competitive programming experience.
+&#9733; The courses that I recommend taking
 
-**My goal:** B.S. in Computer Science, additional major in Discrete Mathematics and Logic. Originally planned for concentration in machine learning and minor in math, but later thought machine learning was boring and switched to double major in junior year.
-
-&#9733; The courses which I think were worth attending CMU for. Courses without a star can also be good, but they are not that special.
+Workload: light, moderate, heavy, death.
 
 ## Fall 2022
-- 10-813 Advanced Topics in Machine Learning Theory
+- 10-703 Deep Reinforcement Learning and Control
 - 15-440 Distributed Systems
 - 21-301 Combinatorics
+  - Should be pretty
 - 21-341 Linear Algebra
-- 88-120 Reason, Passion, and Cognition
+- &#9733; 88-120 Reason, Passion, and Cognition
+- (TA) 15-459 Quantum Computation
+
+**Workload:** Heavy-death.
 
 
 ## Spring 2022
-- (TA) 10-725 Convex Optimization
 - &#9733; 15-751 A Theorist's Toolkit
   - Ryan teaches you many tricks and details that might bother beginners when doing CS theory research that are typically not taught in many classes. You might take a long time to learn them yourself.
 - &#9733; 21-484 Graph Theory
@@ -35,8 +36,11 @@ description: My journey at CMU.
   - Worked with Yuanzhi Li on adaptive algorithms.
 - 15-295 Competition Programming and Problem Solving
   - Participated in ICPC and won a silver medal!
+- (TA) 10-725 Convex Optimization
 
 **Other commitments:** Non-convex optimization research, ML Research @ MultiComp Lab, ICPC.
+
+**Workload:** Moderate-heavy, mostly because of research and toolkit.
 
 
 
@@ -63,9 +67,9 @@ description: My journey at CMU.
 - (TA) 10-725 Convex Optimization
   - The major works are grading and leading office hours since there are no recitations. One additional work is that Yuanzhi doesn't provide solutions to the homework problems, so I was actually the person responsible for writing the reference solutions to all the homework problems.
 
-**Other commitments:** Non-convex optimization research, ML Research @ MultiComp Lab, preparing for ICPC.
+**Other commitments:** Non-convex optimization research, ML Research, preparing for ICPC.
 
-**Workload:** Moderate.
+**Workload:** Moderate-heavy, not as hard as what I would think of, maybe because 859 was not that particularly hard.
 
 **Miscellaneous:** I decided to declare an additional major in discrete mathematics and logic because I love math so much. I also decided to focus on theoretical foundations of machine learning for research. I was quite afraid to do theory, since I thought TCS is a hard and I'm not confident. But I find myself much more attracted to proving theory and algorithms than writing code and doing experiments. Also got some advice from few very nice people, so I made my decision.
 
@@ -83,8 +87,7 @@ description: My journey at CMU.
   - Covers many areas in computer vision, including traditional methods like line detection and corner detection, physics-based vision, computational photography, and learning-based vision. If you're just interested in deep learning, you should go take 16-824 Visual Learning and Recognition.
 - 36-226 Introduction to Statistical Inference
   - I originally did this for the ML concentration, but they later removed this requirement, and I also gave up on the ML concentration because I want to do additional major, so...
-  - Tons of homework and exams. I did 5 tests and 3 exams in one semester for this single course.
-  - Topics are boring. Mostly just "how to become a subset of R".
+  - Tons of homework and exams. I did 5 short tests (45 mins) and 3 exams (2 hrs) in one semester for this single course.
 - 85-219 Biological Foundations of Behavior
   - This course is actually more interesting than I expected. Although there are no in person experiments, the topics are interesting. I learned how the body works, how I perceive what's happening in the world and react to it.
 - 15-295 Competition Programming and Problem Solving
@@ -97,7 +100,7 @@ description: My journey at CMU.
 
 **Other commitments:** ML Research @ MultiComp Lab, Tsinghua University host institution program, Codeforces competitions.
 
-**Workload:** Death.
+**Workload:** Death, spend many all nighters, sometimes wake up after 5pm.
 
 
 
@@ -121,7 +124,7 @@ description: My journey at CMU.
   - More like a club than a course. I plan to take more in the future.
   - If you know pretty much about competitive programming, it almost takes you no time. I never did competitive programming before, only some LeetCode problems, but I only spent like 1.5h per week on it for the semester to get an A.
 
-**Workload:** moderate to light.
+**Workload:** Moderate.
 
 **Miscellaneous:** I was always quite anxious in most time of this semester due to some personal problems, so although course workload was ok, but it was not a easy time for me. Also, taking online courses in another time zone is so hard.
 
@@ -132,6 +135,7 @@ description: My journey at CMU.
   - Great introductory course to computer systems and very famous even for non-CMU students.
   - Getting a good grade is probably easier than the other CS courses since the labs weights 50%, but the final exam was quite hard, especially concurrency problems.
   - The labs were certainly interesting but they could be very time consuming, so plan your time wisely. I began working on Cache Lab the very last day and it took me exactly 24 hours (with no breaks). Proxy Lab is a nightmare for me since I began working on it after the final and only had less than one day.
+  - Honestly this is a good course, but I just don't like systems.
 - 21-325 Probability
   - Harder than I expected. It was very fast-paced in the summer session.
   - A proof-based course, with the goal to prove the central limit theorem, the law of large numbers, etc. The proofs were heavily based on mathematical analysis, so it's recommended to take 21-269 or 21-355 beforehand.
@@ -165,7 +169,7 @@ description: My journey at CMU.
   - A typical college-level writing course.
   - Minimal work.
 
-**Workload:** moderate-heavy, spent most time on 251.
+**Workload:** Heavy, spent most time on 251.
 
 
 
@@ -190,5 +194,5 @@ description: My journey at CMU.
 - 76-100 Reading and Writing in Academic Context
   - Just a course for international students, skip it if you can. Hedi Wright is so nice. Minimal work.
 
-**Workload:** light, got plenty of sleep and time with friends.
+**Workload:** Light, got plenty of sleep and time with friends.
 
