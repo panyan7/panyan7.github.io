@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'liquid', '~> 4.0', '>= 4.0.4'
 group :jekyll_plugins do
     gem 'github-pages'
     gem "jekyll"
