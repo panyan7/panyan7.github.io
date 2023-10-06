@@ -2,7 +2,7 @@
 layout: about
 title: Yan Pan's Home Page
 permalink: /
-description: Undergraduate @ CMU SCS
+description: MSML @ CMU
 
 profile:
   align: right
