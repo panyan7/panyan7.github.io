@@ -1,0 +1,17 @@
+current directory: /Users/elvispan/Documents/GitHub/panyan7.github.io/vendor/bundle/ruby/2.6.0/gems/racc-1.7.1/ext/racc/cparse
+/Users/elvispan/.rvm/rubies/ruby-2.6.0/bin/ruby -I /Users/elvispan/.rvm/rubies/ruby-2.6.0/lib/ruby/site_ruby/2.6.0 -r ./siteconf20231006-82147-1gps8xx.rb extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/elvispan/Documents/GitHub/panyan7.github.io/vendor/bundle/ruby/2.6.0/gems/racc-1.7.1/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /Users/elvispan/Documents/GitHub/panyan7.github.io/vendor/bundle/ruby/2.6.0/gems/racc-1.7.1/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/elvispan/Documents/GitHub/panyan7.github.io/vendor/bundle/ruby/2.6.0/gems/racc-1.7.1/ext/racc/cparse
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20231006-82147-1wp51bu/racc
