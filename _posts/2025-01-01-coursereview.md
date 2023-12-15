@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Course Review
-date:   2023-01-01 00:00:00
+date:   2025-01-01 00:00:00
 description: My journey at CMU.
 ---
 &#9733; The courses that I recommend taking
