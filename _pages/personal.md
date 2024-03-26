@@ -13,6 +13,7 @@ A few keywords of my interests:
 - **Soccer**: I play soccer very frequently and I can play CB or GK. I became a Real Madrid fan after 2014 UCL Final. I also play FIFA sometimes.
 - **Trance**: I'm a great fan of [trance music](https://en.wikipedia.org/wiki/Trance_music), and several electronic music genres (deep house, melodic dubstep). [[1](https://www.youtube.com/watch?v=s0Pb2XT43Mg),[2](https://www.youtube.com/watch?v=5td44uofGA8),[3](https://www.youtube.com/watch?v=6-yxYNHZcho),[4](https://www.youtube.com/watch?v=g-SJ37cuyvw)]
 - **Style**: I like minimalist fashion designers like Lemaire and Jil Sander.
+- **Poker**: I'm a big fan of Texas Hold'em poker. I mainly play low to normal stakes.
 - **Nature**: I love nature, landscape, and traveling. I enjoy hiking and cycling.
 - **Cuisine**: I cook a lot of Chinese food myself.
 - **Cocktails**: I bartend and make cocktails myself.
