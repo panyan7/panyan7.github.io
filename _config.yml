@@ -79,10 +79,10 @@ collections:
     defaults:
       layout: post
       title: News
-    output: false
+    output: true
     permalink: /news/:path/
   projects:
-    output: false
+    output: true
     permalink: /projects/:path/
 
 news_limit: 5
@@ -148,11 +148,11 @@ scholar:
 # Optional Features
 # -----------------------------------------------------------------------------
 
-enable_google_analytics:  false
+enable_google_analytics:  true
 enable_mansory:           true
 enable_math:              true
 enable_tooltips:          false
-enable_darkmode:          false
+enable_darkmode:          true
 show_social_icons:        false
 
 # -----------------------------------------------------------------------------
