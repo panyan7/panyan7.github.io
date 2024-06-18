@@ -15,7 +15,7 @@ nav: true
 ## Research Projects
 - **Zeroth-Order Online Convex Optimization**\
   *CMU 10-422 Spring 2023*\
-  [[Report]](https://panyan7.github.io/assets/pdf/bandit_optimization_report.pdf) [[Slides]](https://panyan7.github.io/assets/pdf/bandit_optimization_slides.pdf) [[GitHub]](https://github.com/panyan7/bandit-optimization/tree/main)
+  [[Report]](https://panyan7.github.io/assets/pdf/bandit_optimization_report.pdf) [[Slides]](https://panyan7.github.io/assets/pdf/bandit_optimization_slides.pdf)
 - **Conditioning Language Models for Image Paragraph Captioning**\
   *CMU Summer Undergraduate Research Fellowship (SURF) 2021*\
   [[Poster]](https://panyan7.github.io/assets/pdf/SURF_Poster.pdf)
