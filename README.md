@@ -13,14 +13,52 @@ A minimalist personal website designed for GitHub Pages hosting.
 ## Structure
 
 - `index.html` - Redirects to home page
+- `sidebar.html` - Sidebar content (shared across all pages)
 - `pages/` - Folder containing all page files
   - `home.html` - Home page
   - `about.html` - About page
   - `projects.html` - Projects page
   - `contact.html` - Contact page
 - `styles.css` - CSS styling
-- `script.js` - JavaScript for navigation
+- `script.js` - JavaScript for navigation and dynamic sidebar loading
 - `README.md` - This file
+
+## Development and Updates
+
+### For Automatic Updates During Development
+
+**Option 1: Use Python HTTP Server (Recommended)**
+```bash
+# Navigate to your website folder
+cd /path/to/your/website
+
+# Start a local server (Python 3)
+python3 -m http.server 8000
+
+# Or with Python 2
+python -m SimpleHTTPServer 8000
+
+# Then open http://localhost:8000 in your browser
+```
+
+**Option 2: Use Node.js HTTP Server**
+```bash
+# Install http-server globally
+npm install -g http-server
+
+# Navigate to your website folder and start server
+cd /path/to/your/website
+http-server
+
+# Then open http://localhost:8080 in your browser
+```
+
+**Option 3: Manual Cache Clearing**
+- Press `Ctrl+F5` (Windows) or `Cmd+Shift+R` (Mac) to force refresh
+- Or open Developer Tools (F12) → Network tab → check "Disable cache"
+
+### Updating the Sidebar
+To update the sidebar across all pages, simply edit the `sidebarTemplate` variable in `script.js` (lines 23-39).
 
 ## Deployment to GitHub Pages
 

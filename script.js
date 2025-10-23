@@ -1,17 +1,7 @@
-// Page navigation functionality for multi-page setup
+// Dynamic sidebar loading and navigation functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    // Set active navigation link based on current page
-    const currentPage = window.location.pathname.split('/').pop();
-    navLinks.forEach(link => {
-        const linkHref = link.getAttribute('href');
-        if (linkHref === currentPage || (currentPage === '' && linkHref === 'home.html')) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
+    // Load sidebar dynamically
+    loadSidebar();
     
     // Add smooth scrolling for anchor links (if any)
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
@@ -28,3 +18,58 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function loadSidebar() {
+    const sidebarContainer = document.getElementById('sidebar-container');
+    if (sidebarContainer) {
+        // Try to fetch from sidebar.html first (works on server)
+        fetch('../sidebar.html?t=' + Date.now())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch sidebar');
+                }
+                return response.text();
+            })
+            .then(html => {
+                sidebarContainer.innerHTML = html;
+                setActiveNavigationLink();
+            })
+            .catch(error => {
+                console.log('Fetch failed, using fallback sidebar');
+                // Fallback: use template if fetch fails (for local file:// protocol)
+                const sidebarTemplate = `
+                    <nav class="sidebar">
+                        <div class="nav-header">
+                            <h1>Your Name</h1>
+                            <p>Software Developer</p>
+                        </div>
+                        <ul class="nav-links">
+                            <li><a href="home.html" class="nav-link">Home</a></li>
+                            <li><a href="about.html" class="nav-link">About</a></li>
+                            <li><a href="projects.html" class="nav-link">Projects</a></li>
+                            <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        </ul>
+                        <div class="nav-footer">
+                            <p>&copy; 2024 Your Name</p>
+                        </div>
+                    </nav>
+                `;
+                sidebarContainer.innerHTML = sidebarTemplate;
+                setActiveNavigationLink();
+            });
+    }
+}
+
+function setActiveNavigationLink() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (linkHref === currentPage || (currentPage === '' && linkHref === 'home.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}

@@ -3,30 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>About - Personal Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=1.0">
 </head>
 <body>
     <div class="container">
-        <!-- Left Sidebar -->
-        <nav class="sidebar">
-            <div class="nav-header">
-                <h1>Your Name</h1>
-                <p>Software Developer</p>
-            </div>
-            <ul class="nav-links">
-                <li><a href="home.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link active">About</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="nav-footer">
-                <p>&copy; 2024 Your Name</p>
-            </div>
-        </nav>
+        <!-- Dynamic Sidebar Container -->
+        <div id="sidebar-container"></div>
 
         <!-- Main Content Area -->
         <main class="content">
@@ -43,6 +32,6 @@
             </div>
         </main>
     </div>
-    <script src="../script.js"></script>
+    <script src="../script.js?v=1.1"></script>
 </body>
 </html>
