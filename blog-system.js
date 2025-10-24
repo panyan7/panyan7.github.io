@@ -2,39 +2,97 @@
 class BlogSystem {
     constructor() {
         this.blogs = [];
+        this.originalContent = null;
         this.init();
     }
 
     async init() {
+        // Store the original content
+        const pageContent = document.querySelector('.page.active');
+        if (pageContent) {
+            this.originalContent = pageContent.innerHTML;
+        }
+        
         await this.loadBlogs();
-        this.renderBlogList();
+        this.handleNavigation();
     }
 
     async loadBlogs() {
-        // List of blog files (in order of creation/importance)
-        const blogFiles = [
-            'deep-learning-fundamentals.md',
-            'generative-models-overview.md',
-            'machine-learning-optimization.md',
-            'computer-vision-applications.md',
-            'natural-language-processing.md'
-        ];
+        try {
+            // Try to get the list of blog files from the JSON file
+            const response = await fetch('../writings/blog-list.json');
+            
+            if (response.ok) {
+                const data = await response.json();
+                const blogFiles = data.files;
 
-        for (const file of blogFiles) {
+                console.log('Found blog files:', blogFiles);
+                
+                // Load each blog file
+                for (const file of blogFiles) {
+                    try {
+                        const blogResponse = await fetch(`../posts/${file}`);
+                        if (blogResponse.ok) {
+                            const markdown = await blogResponse.text();
+                            const blog = this.parseMarkdown(markdown, file);
+                            this.blogs.push(blog);
+                        }
+                    } catch (error) {
+                        console.error(`Error loading blog ${file}:`, error);
+                    }
+                }
+            } else {
+                // Fallback: try to load known files if JSON file is not available
+                await this.loadFallbackBlogs();
+            }
+        } catch (error) {
+            console.error('Error fetching blog list, using fallback:', error);
+            await this.loadFallbackBlogs();
+        }
+
+        // Sort blogs by date (newest first)
+        this.blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
+
+    handleNavigation() {
+        // Check if we're viewing a specific blog post
+        const hash = window.location.hash.substring(1); // Remove the #
+        
+        if (hash) {
+            // Load the specific blog post
+            this.loadBlog(hash);
+        } else {
+            // Show the blog list
+            this.renderBlogList();
+        }
+        
+        // Listen for hash changes
+        window.addEventListener('hashchange', () => {
+            const newHash = window.location.hash.substring(1);
+            if (newHash) {
+                this.loadBlog(newHash);
+            } else {
+                this.showBlogList();
+            }
+        });
+    }
+
+    async loadFallbackBlogs() {
+        // Fallback method when JSON file is not available
+        const fallbackFiles = [];
+
+        for (const file of fallbackFiles) {
             try {
-                const response = await fetch(`../blogs/${file}`);
+                const response = await fetch(`../posts/${file}`);
                 if (response.ok) {
                     const markdown = await response.text();
                     const blog = this.parseMarkdown(markdown, file);
                     this.blogs.push(blog);
                 }
             } catch (error) {
-                console.error(`Error loading blog ${file}:`, error);
+                console.error(`Error loading fallback blog ${file}:`, error);
             }
         }
-
-        // Sort blogs by date (newest first)
-        this.blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
     }
 
     parseMarkdown(markdown, filename) {
@@ -52,13 +110,13 @@ class BlogSystem {
         // Parse frontmatter fields
         const title = this.extractFrontmatterField(frontmatter, 'title');
         const date = this.extractFrontmatterField(frontmatter, 'date');
-        const excerpt = this.extractFrontmatterField(frontmatter, 'excerpt');
+        const language = this.extractFrontmatterField(frontmatter, 'language') || 'en';
 
         return {
             filename: filename.replace('.md', ''),
             title,
             date,
-            excerpt,
+            language,
             content: this.parseMarkdownContent(content)
         };
     }
@@ -95,9 +153,11 @@ class BlogSystem {
         this.blogs.forEach(blog => {
             html += `
                 <div class="blog-item">
-                    <h3><a href="#" onclick="blogSystem.loadBlog('${blog.filename}')">${blog.title}</a></h3>
+                    <div class="blog-title-row">
+                        <span class="blog-language">${blog.language.toUpperCase()}</span>
+                        <h3 class="blog-title"><a href="#${blog.filename}">${blog.title}</a></h3>
+                    </div>
                     <p class="blog-date">${this.formatDate(blog.date)}</p>
-                    <p class="blog-excerpt">${blog.excerpt}</p>
                 </div>
             `;
         });
@@ -109,6 +169,9 @@ class BlogSystem {
         const blog = this.blogs.find(b => b.filename === filename);
         if (!blog) return;
 
+        // Update the URL hash
+        window.location.hash = filename;
+
         // Update the page content
         const pageContent = document.querySelector('.page.active');
         if (pageContent) {
@@ -118,7 +181,7 @@ class BlogSystem {
                     <p class="blog-meta">${this.formatDate(blog.date)}</p>
                     <div class="blog-content">${blog.content}</div>
                     <div class="blog-navigation">
-                        <a href="#" onclick="blogSystem.showBlogList()">← Back to Writings</a>
+                        <a href="#">← Back to Writings</a>
                     </div>
                 </div>
             `;
@@ -126,20 +189,21 @@ class BlogSystem {
     }
 
     showBlogList() {
+        // Clear the URL hash
+        window.location.hash = '';
+
         const pageContent = document.querySelector('.page.active');
-        if (pageContent) {
-            pageContent.innerHTML = `
-                <h2>Writings</h2>
-                <p>Here you'll find my thoughts on machine learning, technology, and various topics that interest me. I write about research insights, technical concepts, and personal reflections.</p>
-                
-                <div id="blog-list"></div>
-            `;
+        if (pageContent && this.originalContent) {
+            // Restore the original content
+            pageContent.innerHTML = this.originalContent;
             this.renderBlogList();
         }
     }
 
     formatDate(dateString) {
-        const date = new Date(dateString);
+        // Parse the date string and create a date in local timezone
+        const [year, month, day] = dateString.split('-');
+        const date = new Date(year, month - 1, day); // month is 0-indexed
         return date.toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',

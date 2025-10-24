@@ -17,10 +17,15 @@ A minimalist personal website designed for GitHub Pages hosting.
 - `pages/` - Folder containing all page files
   - `home.html` - Home page
   - `about.html` - About page
-  - `projects.html` - Projects page
-  - `contact.html` - Contact page
+  - `writings.html` - Writings page
+- `posts/` - Folder containing blog post markdown files
+- `writings/` - Blog system files and configuration
+  - `blog-list.json` - List of blog files
+  - `README.md` - Blog system documentation
 - `styles.css` - CSS styling
 - `script.js` - JavaScript for navigation and dynamic sidebar loading
+- `blog-system.js` - JavaScript for blog loading and rendering
+- `update-blog-list.py` - Script to update the blog list
 - `README.md` - This file
 
 ## Development and Updates
@@ -59,6 +64,22 @@ http-server
 
 ### Updating the Sidebar
 To update the sidebar across all pages, simply edit the `sidebarTemplate` variable in `script.js` (lines 23-39).
+
+### For Blog System
+
+The blog system automatically discovers and renders markdown files from the `posts/` folder:
+
+1. **Add new blog:** Create a new `.md` file in the `posts/` folder
+2. **Update list:** Run `python3 update-blog-list.py` to update the blog list
+3. **Automatic rendering:** The system automatically finds and renders the new blog
+
+The system includes:
+- **JSON-based discovery:** Uses `writings/blog-list.json` to track blog files
+- **Markdown rendering:** Converts markdown to HTML
+- **Date sorting:** Blogs are automatically sorted by date (newest first)
+- **Single-page navigation:** Navigate between blog list and individual posts
+
+For more details, see `writings/README.md`.
 
 ## Deployment to GitHub Pages
 
