@@ -69,9 +69,10 @@ The system uses a JSON file (`blog-list.json`) that contains the list of all blo
 
 1. **JavaScript loads** `blog-list.json` to get the list of blog files
 2. **Each blog file** is then loaded and parsed from markdown
-3. **Blogs are sorted** by date automatically
-4. **Content is rendered** in the browser
-5. **URL routing** handles navigation between blog list and individual posts
+3. **Marked library** converts markdown to HTML on the client side
+4. **Blogs are sorted** by date automatically
+5. **Content is rendered** in the browser with consistent styling
+6. **URL routing** handles navigation between blog list and individual posts
 
 ## Workflow
 

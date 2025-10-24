@@ -28,7 +28,7 @@ class BlogSystem {
 
                 console.log('Found blog files:', blogFiles);
                 
-                // Load each blog file
+                // Load each blog file (markdown files)
                 for (const file of blogFiles) {
                     try {
                         const blogResponse = await fetch(`../posts/${file}`);
@@ -95,6 +95,7 @@ class BlogSystem {
         }
     }
 
+
     parseMarkdown(markdown, filename) {
         // Parse frontmatter
         const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
@@ -128,21 +129,26 @@ class BlogSystem {
     }
 
     parseMarkdownContent(content) {
-        // Simple markdown to HTML converter
-        let html = content;
-        
-        // Headers
-        html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-        html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-        html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-        
-        // Paragraphs
-        html = html.replace(/^(?!<[h1-6])(.+)$/gim, '<p>$1</p>');
-        
-        // Clean up multiple paragraph tags
-        html = html.replace(/<\/p>\s*<p>/g, '\n\n');
-        
-        return html;
+        // Use marked library for better markdown conversion
+        if (typeof marked !== 'undefined') {
+            return marked.parse(content);
+        } else {
+            // Fallback simple markdown to HTML converter
+            let html = content;
+            
+            // Headers
+            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+            
+            // Paragraphs
+            html = html.replace(/^(?!<[h1-6])(.+)$/gim, '<p>$1</p>');
+            
+            // Clean up multiple paragraph tags
+            html = html.replace(/<\/p>\s*<p>/g, '\n\n');
+            
+            return html;
+        }
     }
 
     renderBlogList() {
