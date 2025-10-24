@@ -2,7 +2,7 @@ class RandomGenerator {
     constructor() {
         this.randomItems = {
             concepts: [
-                'Post-modernism', 'Magical Realism', 'Stream of Consciousness',
+                'Postmodernism', 'Magical Realism', 'Stream of Consciousness',
                 'New Topographics', 'New Color Photography', 'Undecidability',
                 'Surrealist Poetry', 'Existentialism', 'Romanticism',
                 'Latin American Literature'

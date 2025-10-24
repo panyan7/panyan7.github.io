@@ -5,7 +5,7 @@ language: en
 ---
 
 Concepts:
-- Post-modernism
+- Postmodernism
 - Magical Realism
 - Stream of Consciousness
 - New Topographics
