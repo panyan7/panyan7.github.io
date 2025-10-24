@@ -13,6 +13,8 @@ Concepts:
 - Undecidability
 - Surrealist Poetry
 - Existentialism
+- Romanticism
+- Latin American Literature
 
 Creators:
 - Roberto Bolaño
@@ -23,14 +25,18 @@ Creators:
 - David Lynch
 - Rinko Kawauchi
 - Wong Kar-Wai
+- Gabriel García Márquez
+- Ang Lee
 
 Works:
 - One Hundred Years of Solitude
 - Gravity's Rainbow
 - Conversations in the Cathedral
 - Pedro Páramo
+- The Aleph
 - A Shimmer of Possibility
 - Uncommon Places
 - Mulholland Drive
 - Pulp Fiction
 - The Matrix
+- Conway's Game of Life

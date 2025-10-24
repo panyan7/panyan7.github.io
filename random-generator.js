@@ -4,16 +4,18 @@ class RandomGenerator {
             concepts: [
                 'Post-modernism', 'Magical Realism', 'Stream of Consciousness',
                 'New Topographics', 'New Color Photography', 'Undecidability',
-                'Surrealist Poetry', 'Existentialism'
+                'Surrealist Poetry', 'Existentialism', 'Romanticism',
+                'Latin American Literature'
             ],
             creators: [
                 'Roberto Bolaño', 'Jorge Luis Borges', 'Thomas Pynchon',
                 'Joel Meyerowitz', 'Stephen Shore', 'David Lynch',
-                'Rinko Kawauchi', 'Wong Kar-Wai'
+                'Rinko Kawauchi', 'Wong Kar-Wai', 'Gabriel García Márquez',
+                'Ang Lee'
             ],
             works: [
                 'One Hundred Years of Solitude', 'Gravity\'s Rainbow',
-                'Conversations in the Cathedral', 'Pedro Páramo',
+                'Conversations in the Cathedral', 'Pedro Páramo', 'The Aleph',
                 'A Shimmer of Possibility', 'Uncommon Places',
                 'Mulholland Drive', 'Pulp Fiction', 'The Matrix'
             ]
