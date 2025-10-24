@@ -216,6 +216,7 @@ class BlogSystem {
             day: 'numeric'
         });
     }
+
 }
 
 // Initialize blog system when DOM is loaded

@@ -222,23 +222,23 @@ body {
 }
 
 .blog-item {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 0.25rem 1rem;
+    background-color: #ffffff;
+    border-radius: 4px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .blog-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateX(2px);
+    background-color: #f5f5f5;
 }
 
 .blog-title-row {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .blog-language {
@@ -273,7 +273,7 @@ body {
 .blog-date {
     color: #666666;
     font-size: 0.9rem;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0 0;
     font-style: italic;
 }
 
@@ -442,4 +442,37 @@ body {
     .page h2 {
         font-size: 1.75rem;
     }
+}
+
+/* Random Items Styles */
+#random-items {
+    margin-bottom: 3rem;
+}
+
+.random-value {
+    color: #007bff;
+    font-weight: 500;
+}
+
+.random-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-family: 'Roboto Mono', monospace;
+    display: inline;
+    vertical-align: baseline;
+    margin-left: 0.1rem;
+}
+
+.random-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.random-button:active {
+    transform: scale(0.95);
 }

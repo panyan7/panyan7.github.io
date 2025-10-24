@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css?v=1.0">
+    <link rel="stylesheet" href="../styles.css?v=1.5">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -34,9 +35,18 @@
                     I'm originally from Beijing, China.
                 </p>
 
+                <p>
+                    Some random things that I like:
+                    <span id="random-concept" class="random-value">Loading...</span>,
+                    <span id="random-creator" class="random-value">Loading...</span>,
+                    and <span id="random-work" class="random-value">Loading...</span>.
+                    <button id="generate-random" class="random-button">More</button>
+                </p>
+
             </div>
         </main>
     </div>
     <script src="../script.js?v=1.1"></script>
+    <script src="../random-generator.js?v=1.0"></script>
 </body>
 </html>
