@@ -40,17 +40,16 @@ function loadSidebar() {
                 const sidebarTemplate = `
                     <nav class="sidebar">
                         <div class="nav-header">
-                            <h1>Your Name</h1>
-                            <p>Software Developer</p>
+                            <h1>Yan Pan</h1>
                         </div>
                         <ul class="nav-links">
                             <li><a href="home.html" class="nav-link">Home</a></li>
                             <li><a href="about.html" class="nav-link">About</a></li>
                             <li><a href="projects.html" class="nav-link">Projects</a></li>
-                            <li><a href="contact.html" class="nav-link">Contact</a></li>
+                            <li><a href="https://www.instagram.com/yanpanphoto/" class="nav-link" target="_blank" rel="noopener">Photo</a></li>
                         </ul>
                         <div class="nav-footer">
-                            <p>&copy; 2024 Your Name</p>
+                            <p>&copy; 2024 Yan Pan</p>
                         </div>
                     </nav>
                 `;
