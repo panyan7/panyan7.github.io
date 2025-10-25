@@ -8,24 +8,25 @@ Concepts:
 - Postmodernism
 - Magical Realism
 - Stream of Consciousness
-- New Topographics
-- New Color Photography
-- Undecidability
+- Latin American Literature
 - Surrealist Poetry
 - Existentialism
 - Romanticism
-- Latin American Literature
+- New Topographics
+- New Color Photography
+- Undecidability
+- Randomness
 
 Creators:
 - Roberto Bolaño
 - Jorge Luis Borges
 - Thomas Pynchon
+- Gabriel García Márquez
 - Joel Meyerowitz
 - Stephen Shore
-- David Lynch
 - Rinko Kawauchi
+- David Lynch
 - Wong Kar-Wai
-- Gabriel García Márquez
 - Ang Lee
 
 Works:

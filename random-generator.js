@@ -3,15 +3,16 @@ class RandomGenerator {
         this.randomItems = {
             concepts: [
                 'Postmodernism', 'Magical Realism', 'Stream of Consciousness',
-                'New Topographics', 'New Color Photography', 'Undecidability',
-                'Surrealist Poetry', 'Existentialism', 'Romanticism',
-                'Latin American Literature'
+                'Latin American Literature', 'Surrealist Poetry',
+                'Existentialism', 'Romanticism',
+                'New Topographics', 'New Color Photography',
+                'Undecidability', 'Randomness',
             ],
             creators: [
-                'Roberto Bolaño', 'Jorge Luis Borges', 'Thomas Pynchon',
-                'Joel Meyerowitz', 'Stephen Shore', 'David Lynch',
-                'Rinko Kawauchi', 'Wong Kar-Wai', 'Gabriel García Márquez',
-                'Ang Lee'
+                'Roberto Bolaño', 'Jorge Luis Borges',
+                'Thomas Pynchon', 'Gabriel García Márquez',
+                'Joel Meyerowitz', 'Stephen Shore', 'Rinko Kawauchi',
+                'David Lynch', 'Wong Kar-Wai', 'Ang Lee'
             ],
             works: [
                 'One Hundred Years of Solitude', 'Gravity\'s Rainbow',
