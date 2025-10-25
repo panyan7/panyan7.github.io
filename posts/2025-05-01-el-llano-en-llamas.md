@@ -3,9 +3,8 @@ title: "燃烧的原野：诗意的穷苦"
 title_en: "The Burning Plain: Poetic Poverty"
 date: "2025-05-01"
 language: zh
+background: "[*El Llano en llamas*](https://en.wikipedia.org/wiki/El_Llano_en_llamas) (*The Burning Plain*) is a collection of short stories by the Mexican author [Juan Rulfo](https://en.wikipedia.org/wiki/Juan_Rulfo)."
 ---
-
-**Background:** [*El Llano en llamas*](https://en.wikipedia.org/wiki/El_Llano_en_llamas) (*The Burning Plain*) is a collection of short stories by the Mexican author [Juan Rulfo](https://en.wikipedia.org/wiki/Juan_Rulfo).
 
 # 墨西哥人的穷苦
 

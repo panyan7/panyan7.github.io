@@ -113,6 +113,7 @@ class BlogSystem {
         const titleEn = this.extractFrontmatterField(frontmatter, 'title_en');
         const date = this.extractFrontmatterField(frontmatter, 'date');
         const language = this.extractFrontmatterField(frontmatter, 'language') || 'en';
+        const background = this.extractFrontmatterFieldMultiLine(frontmatter, 'background');
 
         return {
             filename: filename.replace('.md', ''),
@@ -120,6 +121,7 @@ class BlogSystem {
             titleEn,
             date,
             language,
+            background: background,
             content: this.parseMarkdownContent(content)
         };
     }
@@ -128,6 +130,23 @@ class BlogSystem {
         const regex = new RegExp(`^${field}:\\s*["']?(.*?)["']?$`, 'm');
         const match = frontmatter.match(regex);
         return match ? match[1].trim() : '';
+    }
+
+    extractFrontmatterFieldMultiLine(frontmatter, field) {
+        // Try to match single line first
+        const singleLineRegex = new RegExp(`^${field}:\\s*["']?([^"'\n]*)["']?$`, 'm');
+        const singleMatch = frontmatter.match(singleLineRegex);
+        if (singleMatch) return singleMatch[1].trim();
+        
+        // Try to match multiline with quotes
+        const multiLineRegex = new RegExp(`^${field}:\\s*["']([\\s\\S]*?)["']$`, 'm');
+        const multiMatch = frontmatter.match(multiLineRegex);
+        if (multiMatch) return multiMatch[1].trim();
+        
+        // Try to match multiline without quotes (until next field or end)
+        const noQuotesRegex = new RegExp(`^${field}:\\s*([\\s\\S]*?)(?=\\n[A-Za-z_][A-Za-z0-9_]*:|$)`, 'm');
+        const noQuotesMatch = frontmatter.match(noQuotesRegex);
+        return noQuotesMatch ? noQuotesMatch[1].trim() : '';
     }
 
     parseMarkdownContent(content) {
@@ -186,10 +205,21 @@ class BlogSystem {
         // Update the page content
         const pageContent = document.querySelector('.page.active');
         if (pageContent) {
+            const backgroundSection = blog.background ? `
+                <div class="background-section">
+                    <div class="background-header" onclick="this.parentElement.classList.toggle('expanded')">
+                        <span class="background-title">Background</span>
+                        <span class="background-toggle">▼</span>
+                    </div>
+                    <div class="background-content">${this.parseMarkdownContent(blog.background)}</div>
+                </div>
+            ` : '';
+            
             pageContent.innerHTML = `
                 <div class="blog-post">
                     <h2>${blog.title}</h2>
                     <p class="blog-meta">${this.formatDate(blog.date)}</p>
+                    ${backgroundSection}
                     <div class="blog-content">${blog.content}</div>
                     <div class="blog-navigation">
                         <a href="#">← Back to Writings</a>

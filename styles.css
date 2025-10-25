@@ -317,6 +317,77 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Background section */
+.background-section {
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.background-header {
+    background-color: #f8f9fa;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    user-select: none;
+}
+
+.background-title {
+    font-weight: 600;
+    color: #333333;
+    font-size: 0.9rem;
+}
+
+.background-toggle {
+    color: #666666;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.background-section.expanded .background-toggle {
+    transform: rotate(180deg);
+}
+
+.background-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease, background-color 0.2s ease;
+    padding: 0 1rem;
+    background-color: #f8f9fa;
+}
+
+.background-section:hover .background-header,
+.background-section:hover .background-content {
+    background-color: #f4f5f6;
+}
+
+.background-section.expanded .background-content {
+    max-height: 2000px;
+    padding: 1rem;
+}
+
+.background-content p {
+    color: #555555;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.background-content a {
+    color: #007bff;
+    text-decoration: none;
+    border-bottom: 1px solid #007bff;
+    transition: border-bottom-color 0.2s ease;
+}
+
+.background-content a:hover {
+    border-bottom-color: transparent;
+}
+
 /* Contact info */
 .contact-info {
     margin-top: 2rem;
