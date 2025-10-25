@@ -110,12 +110,14 @@ class BlogSystem {
 
         // Parse frontmatter fields
         const title = this.extractFrontmatterField(frontmatter, 'title');
+        const titleEn = this.extractFrontmatterField(frontmatter, 'title_en');
         const date = this.extractFrontmatterField(frontmatter, 'date');
         const language = this.extractFrontmatterField(frontmatter, 'language') || 'en';
 
         return {
             filename: filename.replace('.md', ''),
             title,
+            titleEn,
             date,
             language,
             content: this.parseMarkdownContent(content)
@@ -157,13 +159,16 @@ class BlogSystem {
 
         let html = '';
         this.blogs.forEach(blog => {
+            const englishTitle = blog.titleEn ? `<div class="blog-title-en">${blog.titleEn}</div>` : '';
             html += `
                 <div class="blog-item">
                     <div class="blog-title-row">
-                        <span class="blog-language">${blog.language.toUpperCase()}</span>
-                        <h3 class="blog-title"><a href="#${blog.filename}">${blog.title}</a></h3>
+                        <span class="blog-date-condensed">${this.formatDateCondensed(blog.date)}</span>
+                        <div class="blog-title-container">
+                            <h3 class="blog-title"><a href="#${blog.filename}">${blog.title}</a></h3>
+                            ${englishTitle}
+                        </div>
                     </div>
-                    <p class="blog-date">${this.formatDate(blog.date)}</p>
                 </div>
             `;
         });
@@ -214,6 +219,16 @@ class BlogSystem {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
+        });
+    }
+
+    formatDateCondensed(dateString) {
+        // Parse the date string and create a date in local timezone
+        const [year, month, day] = dateString.split('-');
+        const date = new Date(year, month - 1, day); // month is 0-indexed
+        return date.toLocaleDateString('en-US', {
+            month: '2-digit',
+            year: '2-digit'
         });
     }
 

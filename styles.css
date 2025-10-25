@@ -186,8 +186,8 @@ body {
 }
 
 .blog-item {
-    margin-bottom: 1rem;
-    padding: 1rem 1rem 0.25rem 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 1rem 0.25rem 1rem;
     background-color: #ffffff;
     border-radius: 4px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -205,7 +205,7 @@ body {
     margin-bottom: 0.2rem;
 }
 
-.blog-language {
+.blog-date-condensed {
     background-color: #fafafa;
     color: #6c757d;
     padding: 0.2rem 0.5rem;
@@ -217,10 +217,19 @@ body {
     flex-shrink: 0;
 }
 
+.blog-title-container {
+    flex: 1;
+}
+
 .blog-item h3.blog-title {
     margin: 0;
     font-size: 1rem;
-    flex: 1;
+}
+
+.blog-title-en {
+    font-size: 0.8rem;
+    color: #666666;
+    margin-top: 0.2rem;
 }
 
 .blog-item h3.blog-title a {
@@ -236,7 +245,7 @@ body {
 
 .blog-date {
     color: #666666;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin: 0 0 0 0;
     font-style: italic;
 }
