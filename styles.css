@@ -320,6 +320,30 @@ html {
     margin-bottom: 1rem;
 }
 
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+.blog-content blockquote {
+    border-left: 3px solid #e0e0e0;
+    padding: 0.5rem 1rem;
+    margin: 1.5rem 0;
+    background-color: #f8f9fa;
+    color: #555555;
+}
+
+.blog-content blockquote p {
+    margin-bottom: 0.5rem;
+}
+
+.blog-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
 /* Background section */
 .background-section {
     margin-bottom: 2rem;

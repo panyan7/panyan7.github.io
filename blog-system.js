@@ -154,6 +154,7 @@ class BlogSystem {
         if (typeof marked !== 'undefined') {
             return marked.parse(content);
         } else {
+            console.log('Using fallback markdown to HTML converter');
             // Fallback simple markdown to HTML converter
             let html = content;
             
