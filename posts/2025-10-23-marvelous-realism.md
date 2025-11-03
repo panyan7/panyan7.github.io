@@ -6,11 +6,11 @@ language: zh
 background: "[*El reino de este mundo*](https://en.wikipedia.org/wiki/The_Kingdom_of_This_World) (*The Kingdom of This World*) is a 1949 novel by the Cuban author [Alejo Carpentier](https://en.wikipedia.org/wiki/Alejo_Carpentier) about the Haitian Revolution. [*El laberinto del fauno*](https://en.wikipedia.org/wiki/Pan%27s_Labyrinth) (*Pan's Labyrinth*) is a 2006 film by the Mexican director [Guillermo del Toro](https://en.wikipedia.org/wiki/Guillermo_del_Toro) about a story in Francoist Spain in 1944. They are both important magical realism works and share similar structures and interpretations."
 ---
 
-作为一个拉美文学爱好者，前几个月在旧金山格外书店买到了古巴作家卡彭铁尔的名作《人间王国》。这本书只有一百页出头，于是我在购买当天晚上就马不停蹄地读完了。过了一段时间，在从纽约回旧金山的航班上，百无聊赖的我在飞机上找免费电影时，将目光定位在了《潘神的迷宫》这部电影上。虽然西语电影名气远远不及西语文学，但这部电影我还是早有耳闻，于是打开观赏。在看到电影结局时，我回想起了在床前借着昏暗灯光读完《人间王国》的那个不算遥远的晚上。于是我打算写一写这两部作品。
+作为一个拉美文学爱好者，前几个月在旧金山格外书店买到了古巴作家卡彭铁尔的名作《人间王国》。这本书只有一百页出头，于是我在购买当天晚上就马不停蹄地读完了。过了一段时间，在从纽约回旧金山的航班上，我在飞机上的电影中看到了《潘神的迷宫》。电影的结局让我异常激动，回想起了在床前借着昏暗灯光读完《人间王国》的那个不算遥远的晚上，于是我打算写一写这两部作品。
 
 ## 人间王国
 
-这本书是魔幻现实主义的代表作之一，讲述了海地黑人反抗欧洲殖民者的历史。作家卡彭铁尔借这本书提出了“神奇现实”的概念。在第一部故事当中，独臂的奴隶麦克康达尔失踪了。奴隶们传说麦克康达尔可以变成「人间王国」中各种飞禽、走兽、鱼虫的能力，在毒物蔓延平原之时，信奉他作为祭司，得到了另一个世界的主宰的使命，创建黑人的帝国。某一天，麦克康达尔「重现原形」，被白人抓捕并决定火刑处决。在行刑时麦克康达尔试图逃走但被重新抓回，但由于黑人奴隶制造了嘈杂和混乱，他们认为麦克康达尔已经靠超能力逃走，并且永远留在「人间王国」。
+这本书是魔幻现实主义的代表作之一，讲述了海地黑人反抗欧洲殖民者的历史。作家卡彭铁尔借这本书提出了“神奇现实”的概念。在第一部故事当中，独臂的奴隶麦克康达尔失踪了。奴隶们传说麦克康达尔可以变成「人间王国」中各种飞禽、走兽、鱼虫的能力，在毒物蔓延平原之时，信奉他作为祭司，得到了另一个世界的主宰的使命，创建黑人的帝国。某一天，麦克康达尔「重现原形」，被白人抓捕并决定火刑处决。在行刑时麦克康达尔试图逃走却被重新抓回，但黑人奴隶制造的嘈杂和混乱导致无人留意麦克康达尔的下场。奴隶们认为麦克康达尔已经靠超能力逃走，并且永远留在「人间王国」。
 
 ## 潘神的迷宫
 
