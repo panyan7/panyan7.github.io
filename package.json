@@ -1,0 +1,14 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Personal website with project submodules",
+  "scripts": {
+    "build": "npm run build:163",
+    "build:163": "cd projects/163 && npm install && npm run build:web",
+    "watch:163": "cd projects/163 && npm run watch:web",
+    "install:all": "npm run install:163",
+    "install:163": "cd projects/163 && npm install"
+  },
+  "private": true
+}
+

@@ -13,11 +13,15 @@ A minimalist personal website designed for GitHub Pages hosting.
 ## Structure
 
 - `index.html` - Redirects to home page
+- `package.json` - Build configuration and scripts for project submodules
 - `sidebar.html` - Sidebar content (shared across all pages)
 - `pages/` - Folder containing all page files
   - `home.html` - Home page
   - `about.html` - About page
   - `writings.html` - Writings page
+- `projects/` - Folder containing project submodules
+  - `163.html` - Redirect page for the 163 game
+  - `163/` - 163-solver submodule (git submodule)
 - `posts/` - Folder containing blog post markdown files
 - `writings/` - Blog system files and configuration
   - `blog-list.json` - List of blog files
@@ -27,6 +31,56 @@ A minimalist personal website designed for GitHub Pages hosting.
 - `blog-system.js` - JavaScript for blog loading and rendering
 - `update-blog-list.py` - Script to update the blog list
 - `README.md` - This file
+
+## Building the Website
+
+This website includes project submodules that need to be built before deployment.
+
+### Initial Setup
+
+1. **Clone the repository with submodules:**
+   ```bash
+   git clone --recurse-submodules <repository-url>
+   ```
+   
+   If you've already cloned without submodules:
+   ```bash
+   git submodule update --init --recursive
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   npm run install:all
+   ```
+
+### Building
+
+To build all project submodules:
+```bash
+npm run build
+```
+
+To build a specific project:
+```bash
+npm run build:163
+```
+
+### Available Build Scripts
+
+- `npm run build` - Builds all projects (currently just 163-solver)
+- `npm run build:163` - Builds the 163 game project
+- `npm run watch:163` - Watches for changes and rebuilds automatically (for development)
+- `npm run install:all` - Installs dependencies for all submodules
+- `npm run install:163` - Installs dependencies for the 163 project
+
+### Project Submodules
+
+- **163-solver** (`projects/163/`) - A game solver project
+  - Accessible at `/projects/163.html` (redirects to `/projects/163/web/index.html`)
+  - Requires TypeScript compilation to build `web/dist/main.js`
+
+**Note:** Always run `npm run build` before deploying to ensure all projects are built with the latest changes.
 
 ## Development and Updates
 
@@ -83,11 +137,18 @@ For more details, see `writings/README.md`.
 
 ## Deployment to GitHub Pages
 
-1. Create a new repository on GitHub
-2. Upload all files to the repository
-3. Go to repository Settings > Pages
-4. Select "Deploy from a branch" and choose "main" branch
-5. Your site will be available at `https://yourusername.github.io/repository-name`
+1. **Build the website:**
+   ```bash
+   npm run build
+   ```
+
+2. Create a new repository on GitHub (or use existing)
+3. Upload all files to the repository
+4. Go to repository Settings > Pages
+5. Select "Deploy from a branch" and choose "main" branch
+6. Your site will be available at `https://yourusername.github.io/repository-name`
+
+**Important:** Make sure to run `npm run build` before committing and pushing to ensure all project submodules are built.
 
 ## Customization
 
