@@ -137,18 +137,50 @@ For more details, see `writings/README.md`.
 
 ## Deployment to GitHub Pages
 
-1. **Build the website:**
+This website uses GitHub Actions to automatically build and deploy to GitHub Pages.
+
+### Automatic Deployment (Recommended)
+
+1. **Push your code to GitHub:**
+   ```bash
+   git push origin main
+   ```
+
+2. **Enable GitHub Pages:**
+   - Go to your repository Settings > Pages
+   - Under "Source", select "GitHub Actions" (not "Deploy from a branch")
+   - The workflow will automatically build and deploy on every push to `main`
+
+3. **The GitHub Actions workflow will:**
+   - Checkout the repository with submodules
+   - Install Node.js and dependencies
+   - Build all project submodules (`npm run build`)
+   - Deploy the built site to GitHub Pages
+
+4. Your site will be available at `https://yourusername.github.io/repository-name`
+
+### Manual Deployment (Alternative)
+
+If you prefer to deploy manually:
+
+1. **Build the website locally:**
    ```bash
    npm run build
    ```
 
-2. Create a new repository on GitHub (or use existing)
-3. Upload all files to the repository
-4. Go to repository Settings > Pages
-5. Select "Deploy from a branch" and choose "main" branch
-6. Your site will be available at `https://yourusername.github.io/repository-name`
+2. **Commit the built files:**
+   ```bash
+   git add .
+   git commit -m "Build website"
+   git push
+   ```
 
-**Important:** Make sure to run `npm run build` before committing and pushing to ensure all project submodules are built.
+3. **Configure GitHub Pages:**
+   - Go to repository Settings > Pages
+   - Select "Deploy from a branch" and choose "main" branch
+   - Select the root `/` folder
+
+**Note:** With manual deployment, you must remember to run `npm run build` before each deployment. The GitHub Actions workflow automates this process.
 
 ## Customization
 
