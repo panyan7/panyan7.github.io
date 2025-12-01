@@ -1,5 +1,5 @@
 ---
-title: "人间王国&潘神的迷宫：神奇现实"
+title: "神奇现实：从人间王国到潘神的迷宫"
 title_en: "The Kingdom of This World and Pan's Labyrinth: Marvelous Reality"
 date: "2025-10-23"
 language: zh
