@@ -586,3 +586,37 @@ html {
 .random-button:active {
     transform: scale(0.95);
 }
+
+.random-quote {
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    color: #555555;
+    font-style: italic;
+    border-radius: 4px;
+}
+
+.random-quote p {
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.random-quote footer {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #666666;
+    font-style: normal;
+    margin-top: 0.5rem;
+}
+
+.random-quote footer::before {
+    content: '— ';
+}
+
+.random-quote img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0.5rem auto;
+    border-radius: 4px;
+}
