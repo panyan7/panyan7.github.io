@@ -4,7 +4,7 @@ class RandomGenerator {
             concepts: [
                 'Postmodernism', 'Magical Realism', 'Stream of Consciousness',
                 'Latin American Literature', 'Existentialism', 'Romanticism',
-                'New Topographics', 'Undecidability', 'Randomness',
+                'Undecidability', 'Randomness',
             ],
             creators: [
                 'Roberto Bolaño', 'Jorge Luis Borges', 'Thomas Pynchon',
