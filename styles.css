@@ -138,14 +138,14 @@ html {
 }
 
 .page h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #333333;
     margin-bottom: 1.5rem;
 }
 
 .page h3 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #333333;
     margin: 2rem 0 1rem 0;
@@ -266,7 +266,7 @@ html {
 }
 
 .blog-post h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: #333333;
     margin: 2rem 0 1rem 0;
@@ -295,21 +295,21 @@ html {
 }
 
 .blog-content h1 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #333333;
-    margin: 2rem 0 1rem 0;
-}
-
-.blog-content h2 {
     font-size: 1.5rem;
     font-weight: 600;
     color: #333333;
     margin: 2rem 0 1rem 0;
 }
 
-.blog-content h3 {
+.blog-content h2 {
     font-size: 1.25rem;
+    font-weight: 600;
+    color: #333333;
+    margin: 2rem 0 1rem 0;
+}
+
+.blog-content h3 {
+    font-size: 1.1rem;
     font-weight: 600;
     color: #333333;
     margin: 1.5rem 0 0.75rem 0;
@@ -501,7 +501,7 @@ html {
     }
 
     .page h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .project-grid {
@@ -550,7 +550,7 @@ html {
     }
 
     .page h2 {
-        font-size: 1.75rem;
+        font-size: 1.35rem;
     }
 }
 

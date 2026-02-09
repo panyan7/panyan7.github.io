@@ -9,7 +9,7 @@ class RandomGenerator {
             creators: [
                 'Roberto Bolaño', 'Jorge Luis Borges', 'Thomas Pynchon',
                 'Joel Meyerowitz', 'Stephen Shore', 'Rinko Kawauchi',
-                'David Lynch', 'Wong Kar-Wai', 'Ang Lee'
+                'David Lynch', 'Wong Kar-Wai'
             ],
             works: [
                 'One Hundred Years of Solitude', 'Pedro Páramo', 'The Aleph',
