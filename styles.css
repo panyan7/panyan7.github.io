@@ -15,7 +15,7 @@ body {
 }
 
 html {
-    font-size: 15px;
+    font-size: 14px;
 }
 
 /* Container layout */
@@ -24,7 +24,7 @@ html {
     height: 100vh;
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 4rem;
     box-sizing: border-box;
 }
 
@@ -134,7 +134,7 @@ html {
 
 /* Page content */
 .page {
-    max-width: 750px;
+    max-width: 700px;
 }
 
 .page h2 {
