@@ -344,6 +344,19 @@ html {
     margin-bottom: 0;
 }
 
+.blog-content .katex-display,
+.background-content .katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    padding: 0.35rem 0;
+}
+
+.blog-content .katex,
+.background-content .katex {
+    font-size: 1.05em;
+}
+
 /* Background section */
 .background-section {
     margin-bottom: 2rem;

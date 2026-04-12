@@ -152,7 +152,14 @@ class BlogSystem {
     parseMarkdownContent(content) {
         // Use marked library for better markdown conversion
         if (typeof marked !== 'undefined') {
-            return marked.parse(content);
+            const { text, codeBlocks } = this.extractFencedCodeBlocks(content);
+            const { text: afterDisplay, displayMath } = this.extractDisplayMath(text);
+            const { text: afterInline, inlineMath } = this.extractInlineMath(afterDisplay);
+
+            let html = marked.parse(afterInline);
+            html = this.restoreFencedCodeBlocks(html, codeBlocks);
+            html = this.renderKatexInHtml(html, displayMath, inlineMath);
+            return html;
         } else {
             console.log('Using fallback markdown to HTML converter');
             // Fallback simple markdown to HTML converter
@@ -171,6 +178,80 @@ class BlogSystem {
             
             return html;
         }
+    }
+
+    extractFencedCodeBlocks(content) {
+        const codeBlocks = [];
+        const text = content.replace(/```[\s\S]*?```/g, (match) => {
+            const i = codeBlocks.length;
+            codeBlocks.push(match);
+            return `\n\nCODEBLOCK${i}\n\n`;
+        });
+        return { text, codeBlocks };
+    }
+
+    restoreFencedCodeBlocks(html, codeBlocks) {
+        return html.replace(/CODEBLOCK(\d+)/g, (_, i) => {
+            const raw = codeBlocks[Number(i)] || '';
+            const m = raw.match(/^```[^\r\n]*\r?\n([\s\S]*?)\r?\n```$/);
+            const inner = m ? m[1] : raw.replace(/^```[^\r\n]*\r?\n?/, '').replace(/\r?\n```$/, '');
+            return `<pre><code>${this.escapeHtml(inner)}</code></pre>`;
+        });
+    }
+
+    extractDisplayMath(content) {
+        const displayMath = [];
+        const text = content.replace(/\$\$([\s\S]*?)\$\$/g, (match, body) => {
+            const i = displayMath.length;
+            displayMath.push(body);
+            return `\n\nMATHDISPLAY${i}\n\n`;
+        });
+        return { text, displayMath };
+    }
+
+    extractInlineMath(content) {
+        const inlineMath = [];
+        const text = content.replace(/\$([^$\n]+)\$/g, (match, body) => {
+            const i = inlineMath.length;
+            inlineMath.push(body);
+            return `MATHINLINE${i}`;
+        });
+        return { text, inlineMath };
+    }
+
+    renderKatexInHtml(html, displayMath, inlineMath) {
+        if (typeof katex === 'undefined') {
+            console.warn('KaTeX not loaded; math will appear as plain text');
+            html = html.replace(/MATHDISPLAY(\d+)/g, (_, i) => {
+                const tex = (displayMath[Number(i)] || '').trim();
+                return `<pre class="math-fallback">${this.escapeHtml(tex)}</pre>`;
+            });
+            html = html.replace(/MATHINLINE(\d+)/g, (_, i) => {
+                const tex = (inlineMath[Number(i)] || '').trim();
+                return `<code class="math-fallback">${this.escapeHtml(tex)}</code>`;
+            });
+            return html;
+        }
+
+        const katexOpts = { throwOnError: false, strict: 'ignore' };
+
+        html = html.replace(/MATHDISPLAY(\d+)/g, (_, i) => {
+            const tex = (displayMath[Number(i)] || '').trim();
+            return katex.renderToString(tex, { ...katexOpts, displayMode: true });
+        });
+        html = html.replace(/MATHINLINE(\d+)/g, (_, i) => {
+            const tex = (inlineMath[Number(i)] || '').trim();
+            return katex.renderToString(tex, { ...katexOpts, displayMode: false });
+        });
+        return html;
+    }
+
+    escapeHtml(text) {
+        return text
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
     }
 
     renderBlogList() {
