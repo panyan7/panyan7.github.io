@@ -1,9 +1,18 @@
 ---
 title: "Zeroth-Order Online Convex Optimization"
-date: "2025-05-01"
+date: "2023-05-10"
 language: en
 ---
 
+In 2020, I was a sophomore at CMU and took the PhD-level Intro to Machine Learning class. At that time, I was attenting college remotely in Beijing when COVID strikes the United States. It was one of the crazy times, when most of my work happened from 10PM to 6AM, and I ate breakfast before I go to sleep.
+One night, I was trying to train a LSTM-RBM generative model to generate music for my course project. When I was impatient for the SGD optimization speed, I found Adam (Kingma & Ba, 2014) in the PyTorch docs and switched to it. That is the moment when homo sapiens discovered fire.
+
+That night in Beijing had a profound influence on my career. In the next semester, I took the Convex Optimization class at CMU taught by Yuanzhi Li, which inspired this project.
+I then became the TA for this course for one year, and worked with Yuanzhi Li to study the problem that I have been wondering, that why Adam actually converges faster than SGD, and produced my first actual academic paper.
+The understanding of deep learning theory and optimization also got me a quantitative research internship offer from Akuna Capital.
+A few years after, I joined xAI, which is founded by previous ML theory & optimization researchers, including Jimmy Ba (author of Adam), Guodong Zhang, and Greg Yang.
+
+This project is one of the less-meaningful result. I took Nina Balcan's course Foundations of Learning and Game Theory, and produced a report on this problem that I had been interested in since sophomore.
 
 ---
 
