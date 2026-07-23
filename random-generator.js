@@ -4,12 +4,12 @@ class RandomGenerator {
             concepts: [
                 'Postmodernism', 'Magical Realism', 'Stream of Consciousness',
                 'Latin American Literature', 'Existentialism', 'Romanticism',
-                'Undecidability', 'Randomness',
+                'Undecidability', 'Randomness'
             ],
             creators: [
                 'Roberto Bolaño', 'Jorge Luis Borges', 'Thomas Pynchon',
                 'Joel Meyerowitz', 'Stephen Shore', 'Rinko Kawauchi',
-                'David Lynch', 'Wong Kar-Wai'
+                'David Lynch', 'Wong Kar-Wai', 'Ang Lee'
             ],
             works: [
                 'One Hundred Years of Solitude', 'Pedro Páramo', 'The Aleph',
