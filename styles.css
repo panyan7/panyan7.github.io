@@ -156,6 +156,83 @@ html {
     color: #555555;
 }
 
+/* Writings page: content column + bottom player dock */
+.writings-layout.container {
+    /* Keep the dock inside the padded viewport (body is overflow:hidden) */
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.writings-layout .writings-main {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    /* Stretch to container content box (container is 100vh + padding; 100vh here was clipping the dock) */
+    min-height: 0;
+    align-self: stretch;
+    overflow: hidden;
+}
+
+.writings-layout .content {
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    height: auto;
+}
+
+/* Bottom player: outside blog content, does not scroll with posts */
+.writings-player {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 0.75rem 3rem 0;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.writings-player-label {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 0;
+    padding: 0.75rem 0;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    color: #bbbbbb;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.writings-player-label:hover {
+    color: #999999;
+}
+
+.writings-player.is-expanded .writings-player-label {
+    display: none;
+}
+
+.writings-player-embed {
+    position: relative;
+    /* Cap size so the full player stays on-screen when expanded */
+    width: min(100%, 700px, calc(36vh * 16 / 9));
+    aspect-ratio: 16 / 9;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.writings-player-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 .page ul {
     margin-left: 1.5rem;
     margin-bottom: 1rem;
@@ -417,11 +494,16 @@ html {
     line-height: 1.6;
 }
 
+.blog-content a,
 .background-content a {
     color: #007bff;
     text-decoration: none;
     border-bottom: 1px solid #007bff;
     transition: border-bottom-color 0.2s ease;
+}
+
+.blog-content a:hover {
+    border-bottom-color: transparent;
 }
 
 .background-content a:hover {
@@ -484,6 +566,30 @@ html {
         overflow-y: visible;
         margin-top: 0;
         margin-bottom: 0;
+    }
+
+    .writings-layout .writings-main {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    .writings-layout .content {
+        height: auto;
+        flex: none;
+    }
+
+    .writings-player {
+        position: sticky;
+        bottom: 0;
+        padding: 0.75rem 1rem 1rem;
+        box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .writings-player-embed {
+        width: min(100%, calc(36vh * 16 / 9));
     }
 
     .nav-header {
