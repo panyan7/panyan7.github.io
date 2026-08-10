@@ -12,74 +12,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css?v=2.16">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-<body>
-    <div class="container writings-layout">
-        <!-- Dynamic Sidebar Container -->
-        <div id="sidebar-container"></div>
+<body class="writings-page hex-board-mode">
+    <!-- Single shared honeycomb: empty + content cells -->
+    <div id="hex-board" class="hex-board" aria-label="Writings"></div>
 
-        <div class="writings-main">
-            <!-- Main Content Area (scrolls; blog list/posts swap here) -->
-            <main class="content">
-                <div class="page active">
-                    <h2>The Library of Babel</h2>
-                    <p>
-                        This is a collection of random, useless, and often unfinished thoughts.
-                    </p>
-                    
-                    <div id="blog-list">
-                        <!-- Blog list will be dynamically loaded here -->
-                    </div>
-                </div>
-            </main>
+    <!-- Individual post view (not on the hex grid) -->
+    <div id="post-panel" class="post-panel" hidden></div>
 
-            <!-- Fixed bottom player: outside .page so blog navigation does not replace it -->
-            <div class="writings-player" id="writings-player">
-                <button type="button" class="writings-player-label" id="writings-player-toggle" aria-expanded="false">
-                    infinity repeating...
-                </button>
-                <div class="writings-player-embed" hidden>
-                    <iframe
-                        id="writings-player-iframe"
-                        title="infinity repeating..."
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="../script.js?v=1.1"></script>
-    <script src="../blog-system.js?v=2.11"></script>
-    <script>
-        (function () {
-            var player = document.getElementById('writings-player');
-            var toggle = document.getElementById('writings-player-toggle');
-            var embed = player && player.querySelector('.writings-player-embed');
-            var iframe = document.getElementById('writings-player-iframe');
-            var videoSrc = 'https://www.youtube-nocookie.com/embed/imBlPXbAv6E?rel=0&autoplay=1';
-
-            if (!player || !toggle || !embed || !iframe) return;
-
-            toggle.addEventListener('click', function () {
-                if (player.classList.contains('is-expanded')) return;
-
-                player.classList.add('is-expanded');
-                toggle.setAttribute('aria-expanded', 'true');
-                toggle.hidden = true;
-                embed.hidden = false;
-
-                // Load on expand so the click counts as a user gesture for autoplay
-                if (!iframe.src) {
-                    iframe.src = videoSrc;
-                }
-            });
-        })();
-    </script>
+    <script src="../hex-board.js"></script>
+    <script src="../blog-system.js"></script>
 </body>
 </html>

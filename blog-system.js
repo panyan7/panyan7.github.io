@@ -7,7 +7,7 @@ class BlogSystem {
     }
 
     async init() {
-        // Store the original content
+        // Store the original content (legacy list markup, if present)
         const pageContent = document.querySelector('.page.active');
         if (pageContent) {
             this.originalContent = pageContent.innerHTML;
@@ -15,6 +15,10 @@ class BlogSystem {
         
         await this.loadBlogs();
         this.handleNavigation();
+    }
+
+    usesHexBoard() {
+        return typeof window.HexBoard !== 'undefined' && document.getElementById('hex-board');
     }
 
     async loadBlogs() {
@@ -255,6 +259,11 @@ class BlogSystem {
     }
 
     renderBlogList() {
+        if (this.usesHexBoard()) {
+            window.HexBoard.showList(this.blogs);
+            return;
+        }
+
         const blogListContainer = document.getElementById('blog-list');
         if (!blogListContainer) return;
 
@@ -282,42 +291,56 @@ class BlogSystem {
         if (!blog) return;
 
         // Update the URL hash
-        window.location.hash = filename;
+        if (window.location.hash.substring(1) !== filename) {
+            window.location.hash = filename;
+        }
 
-        // Update the page content
+        const backgroundSection = blog.background ? `
+            <div class="background-section">
+                <div class="background-header" onclick="this.parentElement.classList.toggle('expanded')">
+                    <span class="background-title">Background</span>
+                    <span class="background-toggle">▼</span>
+                </div>
+                <div class="background-content">${this.parseMarkdownContent(blog.background)}</div>
+            </div>
+        ` : '';
+
+        const postHtml = `
+            <div class="blog-post">
+                <h2>${blog.title}</h2>
+                <p class="blog-meta">${this.formatDate(blog.date)}</p>
+                ${backgroundSection}
+                <div class="blog-content">${blog.content}</div>
+                <div class="blog-navigation">
+                    <a href="#">← Back to Writings</a>
+                </div>
+            </div>
+        `;
+
+        if (this.usesHexBoard()) {
+            window.HexBoard.showPostPanel(postHtml);
+            return;
+        }
+
         const pageContent = document.querySelector('.page.active');
         if (pageContent) {
-            const backgroundSection = blog.background ? `
-                <div class="background-section">
-                    <div class="background-header" onclick="this.parentElement.classList.toggle('expanded')">
-                        <span class="background-title">Background</span>
-                        <span class="background-toggle">▼</span>
-                    </div>
-                    <div class="background-content">${this.parseMarkdownContent(blog.background)}</div>
-                </div>
-            ` : '';
-            
-            pageContent.innerHTML = `
-                <div class="blog-post">
-                    <h2>${blog.title}</h2>
-                    <p class="blog-meta">${this.formatDate(blog.date)}</p>
-                    ${backgroundSection}
-                    <div class="blog-content">${blog.content}</div>
-                    <div class="blog-navigation">
-                        <a href="#">← Back to Writings</a>
-                    </div>
-                </div>
-            `;
+            pageContent.innerHTML = postHtml;
         }
     }
 
     showBlogList() {
-        // Clear the URL hash
-        window.location.hash = '';
+        // Clear the URL hash without retriggering if already empty
+        if (window.location.hash) {
+            window.location.hash = '';
+        }
+
+        if (this.usesHexBoard()) {
+            window.HexBoard.showList(this.blogs);
+            return;
+        }
 
         const pageContent = document.querySelector('.page.active');
         if (pageContent && this.originalContent) {
-            // Restore the original content
             pageContent.innerHTML = this.originalContent;
             this.renderBlogList();
         }
