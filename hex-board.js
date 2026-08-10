@@ -355,6 +355,7 @@
         if (cell.blockId) cls += ' hex-label--block';
 
         var inner = '';
+        var playing = false;
 
         if (cell.type === 'title') {
             inner = '<span class="hex-label-text hex-label-text--title">' +
@@ -379,6 +380,9 @@
                 '</a>';
         } else if (cell.type === 'player') {
             if (state.playerExpanded) {
+                playing = true;
+                cls += ' hex-label--playing';
+                // Full-cell embed; parent label provides a single perfect flat-top clip
                 inner =
                     '<div class="hex-player-embed">' +
                     '<iframe src="' + VIDEO_SRC +
@@ -392,6 +396,15 @@
                     escapeHtml(cell.text) +
                     '</button>';
             }
+        }
+
+        if (playing) {
+            return (
+                '<div class="' + cls + '" style="' + style +
+                '" data-type="' + cell.type + '">' +
+                inner +
+                '</div>'
+            );
         }
 
         return (
