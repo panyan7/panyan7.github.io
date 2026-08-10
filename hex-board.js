@@ -153,32 +153,77 @@
         return d;
     }
 
+    /** Cube distance between axial cells (for empty-hex fade). */
+    function axialDistance(q, r, q0, r0) {
+        var dq = q - q0;
+        var dr = r - r0;
+        var ds = (-q - r) - (-q0 - r0);
+        return Math.max(Math.abs(dq), Math.abs(dr), Math.abs(ds));
+    }
+
     /**
-     * Empty cell: solid outer only (lattice-adjacent).
-     * Content cell: solid outer + smaller inner with 1/6 contour sweeping clockwise.
+     * Empty cells: dashed outer. Distance = cube steps from nearest content/sidebar
+     * cell. Dash length + opacity fall off gradually; gone by EMPTY_FADE_DIST.
+     * Content cells: solid outer + animated inner arc.
      */
-    function hexCellSvg(cx, cy, outerR, fill, hasContent) {
+    var EMPTY_FADE_DIST = 9; // fully gone this many steps from the filled cluster
+
+    function minDistToFilled(q, r, filledList) {
+        var minD = Infinity;
+        for (var i = 0; i < filledList.length; i++) {
+            var f = filledList[i];
+            var d = axialDistance(q, r, f.q, f.r);
+            if (d < minD) minD = d;
+        }
+        return minD;
+    }
+
+    function hexCellSvg(cx, cy, outerR, fill, hasContent, emptyDist) {
         var outerPts = HL().pointsAttr(HL().hexCorners(cx, cy, outerR));
-        var parts =
-            '<g class="hex-cell' + (hasContent ? ' hex-cell--content' : '') + '">' +
-            '<polygon class="hex-outer" points="' + outerPts +
-            '" fill="' + fill +
-            '" stroke="' + HEX_STROKE +
-            '" stroke-width="1" stroke-linejoin="round"/>';
 
         if (hasContent) {
             var innerR = outerR / INNER_RATIO;
             var innerPath = hexPerimeterPath(cx, cy, innerR);
-            parts +=
+            return (
+                '<g class="hex-cell hex-cell--content">' +
+                '<polygon class="hex-outer" points="' + outerPts +
+                '" fill="' + fill +
+                '" stroke="' + HEX_STROKE +
+                '" stroke-width="1" stroke-linejoin="round"/>' +
                 '<path class="hex-inner-arc" d="' + innerPath +
                 '" fill="none" stroke="' + HEX_STROKE +
                 '" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round"' +
                 ' pathLength="6"' +
-                ' stroke-dasharray="1 5"/>';
+                ' stroke-dasharray="1 5"/>' +
+                '</g>'
+            );
         }
 
-        parts += '</g>';
-        return parts;
+        // Empty: skip only past the fade horizon
+        if (emptyDist >= EMPTY_FADE_DIST) {
+            return '';
+        }
+
+        // Neighbors of content (dist 1) are strongest; fade linearly to the horizon
+        var t = (emptyDist - 1) / (EMPTY_FADE_DIST - 1);
+        if (t < 0) t = 0;
+        if (t > 1) t = 1;
+
+        // pathLength units (perimeter = 6): long dashes near, short far, gap grows
+        var dashOn = 0.65 * (1 - t) + 0.12 * t;       // ~0.65 → ~0.12
+        var dashOff = 0.18 * (1 - t) + 0.75 * t;      // ~0.18 → ~0.75
+        var opacity = 0.9 * (1 - t) + 0.12 * t;       // stay readable longer
+
+        var emptyPath = hexPerimeterPath(cx, cy, outerR);
+        return (
+            '<g class="hex-cell hex-cell--empty" opacity="' + opacity.toFixed(3) + '">' +
+            '<path class="hex-outer-dashed" d="' + emptyPath +
+            '" fill="none" stroke="' + HEX_STROKE +
+            '" stroke-width="1" stroke-linejoin="round" stroke-linecap="butt"' +
+            ' pathLength="6"' +
+            ' stroke-dasharray="' + dashOn.toFixed(3) + ' ' + dashOff.toFixed(3) + '"/>' +
+            '</g>'
+        );
     }
 
     function render() {
@@ -189,9 +234,13 @@
         var m = HL().mountSidebar({ activePage: 'writings.html', showDividers: true });
 
         var contentMap = {};
+        var filledList = [];
         state.content.forEach(function (c) {
             contentMap[key(c.q, c.r)] = c;
+            filledList.push({ q: c.q, r: c.r });
         });
+        // Sidebar hexes count as filled for the empty-field fade
+        filledList.push({ q: 0, r: 0 }, { q: 0, r: 1 }, { q: 0, r: 2 });
 
         var range = HL().coverRange(m);
         var svgParts = [];
@@ -211,10 +260,11 @@
                 var isSidebarHex = (q === 0 && r >= 0 && r <= 2);
                 var hasContent = !!cell || isSidebarHex;
                 var fill = hasContent ? '#ffffff' : 'none';
+                var emptyDist = hasContent ? 0 : minDistToFilled(q, r, filledList);
 
-                // m.size = outer radius; outers are lattice-adjacent
-                // Inner sweep only on content blocks + sidebar hexes
-                svgParts.push(hexCellSvg(c.x, c.y, m.size, fill, hasContent));
+                svgParts.push(
+                    hexCellSvg(c.x, c.y, m.size, fill, hasContent, emptyDist)
+                );
 
                 if (cell) {
                     labelParts.push(renderLabel(cell, m));
