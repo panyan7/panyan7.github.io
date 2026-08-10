@@ -17,14 +17,16 @@
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-<body class="writings-page hex-board-mode">
-    <!-- Single shared honeycomb: empty + content cells -->
+<body class="writings-page hex-board-mode hex-site-layout">
+    <!-- Full honeycomb (visible); sidebar from HexLayout shares the same lattice -->
     <div id="hex-board" class="hex-board" aria-label="Writings"></div>
 
-    <!-- Individual post view (not on the hex grid) -->
+    <!-- Individual post view -->
     <div id="post-panel" class="post-panel" hidden></div>
 
+    <script src="../hex-layout.js"></script>
     <script src="../hex-board.js"></script>
+    <script src="../script.js"></script>
     <script src="../blog-system.js"></script>
 </body>
 </html>

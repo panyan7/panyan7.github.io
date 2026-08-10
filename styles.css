@@ -156,7 +156,87 @@ html {
     color: #555555;
 }
 
-/* ===== Writings page: single shared hex board ===== */
+/* ===== Shared hex site layout (flat-top lattice) ===== */
+body.hex-site-layout {
+    background-color: #ffffff;
+}
+
+/* Fixed sidebar: positions computed from hex slots (same on every page) */
+.site-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.site-nav-item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: auto;
+    box-sizing: border-box;
+}
+
+.site-nav-text--brand {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #333333;
+    line-height: 1.2;
+}
+
+.site-nav-link {
+    display: block;
+    width: 100%;
+    padding: 0.35rem 0.5rem;
+    color: #666666;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.site-nav-link:hover {
+    color: #333333;
+    background-color: transparent;
+}
+
+.site-nav-link:focus,
+.site-nav-link:focus-visible {
+    outline: none;
+    background-color: transparent;
+}
+
+.site-nav-item.is-active .site-nav-link {
+    color: #007bff;
+    font-weight: 600;
+}
+
+/* Main content aligned to the right of the hex sidebar column */
+body.hex-site-layout main.content.hex-positioned-content,
+body.hex-site-layout .site-content.hex-positioned-content {
+    position: fixed;
+    top: var(--site-content-top, 4rem);
+    left: var(--site-content-left, 25%);
+    width: var(--site-content-width, 75%);
+    max-width: none;
+    height: calc(100vh - var(--site-content-top, 4rem) - var(--site-pad, 4rem));
+    padding: 1rem 1.5rem 2rem 1rem;
+    margin: 0;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background: #ffffff;
+    z-index: 10;
+}
+
+/* Hide legacy container chrome when using hex site layout */
+body.hex-site-layout .container {
+    display: none;
+}
+
+/* ===== Writings page: visible hex board ===== */
 body.writings-page {
     background-color: #ffffff;
     height: 100vh;
@@ -169,6 +249,10 @@ body.writings-page.hex-board-mode {
 
 body.writings-page.hex-post-mode {
     overflow: hidden;
+}
+
+body.writings-page.hex-post-mode .site-nav {
+    z-index: 25;
 }
 
 /* Full-viewport board — no page scroll */
@@ -209,15 +293,15 @@ body.writings-page.hex-post-mode {
     box-sizing: border-box;
 }
 
-/* Pointy-top hex (vertical sides) — one text unit per cell */
-.hex-label--pointy {
+/* Flat-top hex (horizontal top/bottom) */
+.hex-label--flat {
     clip-path: polygon(
-        50% 0%,
-        100% 25%,
-        100% 75%,
-        50% 100%,
-        0% 75%,
-        0% 25%
+        25% 0%,
+        75% 0%,
+        100% 50%,
+        75% 100%,
+        25% 100%,
+        0% 50%
     );
 }
 
@@ -348,8 +432,8 @@ body.writings-page.hex-post-mode {
     min-height: 4rem;
     background: #000;
     overflow: hidden;
-    /* Match pointy-top hex */
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    /* Match flat-top hex */
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 
 .hex-player-embed iframe {
@@ -360,20 +444,23 @@ body.writings-page.hex-post-mode {
     border: 0;
 }
 
-/* Post reading panel over the board */
+/* Post reading panel — content column only; sidebar stays fixed */
 .post-panel {
     position: fixed;
-    inset: 0;
-    z-index: 2;
+    top: var(--site-content-top, 4rem);
+    left: var(--site-content-left, 25%);
+    width: var(--site-content-width, 75%);
+    height: calc(100vh - var(--site-content-top, 4rem) - var(--site-pad, 4rem));
+    z-index: 15;
     overflow-y: auto;
     background: #ffffff;
-    padding: 3rem 1.5rem 4rem;
+    padding: 1rem 1.5rem 3rem 1rem;
     box-sizing: border-box;
 }
 
 .post-panel .blog-post {
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0;
 }
 
 body.writings-page.hex-post-mode .hex-board {
@@ -685,6 +772,28 @@ body.writings-page.hex-post-mode .hex-board {
     body {
         height: auto !important;
         overflow: visible !important;
+    }
+
+    /* Stack hex site chrome: nav still absolute from JS; content flows below */
+    body.hex-site-layout main.content.hex-positioned-content,
+    body.hex-site-layout .site-content.hex-positioned-content {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        padding: 6rem 1.25rem 2rem;
+        overflow-y: visible;
+    }
+
+    body.writings-page .post-panel {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: auto;
+        padding: 5rem 1rem 2rem;
     }
 
     .container {

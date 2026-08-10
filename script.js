@@ -1,74 +1,96 @@
-// Dynamic sidebar loading and navigation functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Load sidebar dynamically
-    loadSidebar();
-    
-    // Add smooth scrolling for anchor links (if any)
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
+// Site shell: hex-stable sidebar + light page helpers
+document.addEventListener('DOMContentLoaded', function () {
+    mountSiteNav();
+
+    // Smooth scroll for in-page anchors only (not bare "#")
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        var href = link.getAttribute('href');
+        if (!href || href === '#') return;
+        link.addEventListener('click', function (e) {
+            var targetId = href.substring(1);
+            var targetElement = document.getElementById(targetId);
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                e.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 });
 
-function loadSidebar() {
-    const sidebarContainer = document.getElementById('sidebar-container');
-    if (sidebarContainer) {
-        // Try to fetch from sidebar.html first (works on server)
-        fetch('../sidebar.html?t=' + Date.now())
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to fetch sidebar');
-                }
-                return response.text();
-            })
-            .then(html => {
-                sidebarContainer.innerHTML = html;
-                setActiveNavigationLink();
-            })
-            .catch(error => {
-                console.log('Fetch failed, using fallback sidebar');
-                // Fallback: use template if fetch fails (for local file:// protocol)
-                const sidebarTemplate = `
-                    <nav class="sidebar">
-                        <div class="nav-header">
-                            <h1>Yan Pan</h1>
-                        </div>
-                        <ul class="nav-links">
-                            <li><a href="home.html" class="nav-link">Home</a></li>
-                            <li><a href="about.html" class="nav-link">About</a></li>
-                            <li><a href="projects.html" class="nav-link">Projects</a></li>
-                            <li><a href="https://www.instagram.com/yanpanphoto/" class="nav-link" target="_blank" rel="noopener">Photo</a></li>
-                        </ul>
-                        <div class="nav-footer">
-                            <p>&copy; 2024 Yan Pan</p>
-                        </div>
-                    </nav>
-                `;
-                sidebarContainer.innerHTML = sidebarTemplate;
-                setActiveNavigationLink();
-            });
+function mountSiteNav() {
+    if (!window.HexLayout) {
+        // Fallback if hex-layout failed to load
+        loadSidebarLegacy();
+        return;
     }
+
+    // Writings page mounts sidebar via HexBoard; still ok to mount here first
+    var page = window.HexLayout.currentPageFile();
+    window.HexLayout.mountSidebar({ activePage: page });
+
+    // Position main content from the same metrics as the sidebar
+    layoutMainContent();
+}
+
+function layoutMainContent() {
+    var m = window.HexLayout && window.HexLayout.getMetrics();
+    if (!m) return;
+
+    var content = document.querySelector('main.content, .site-content');
+    if (!content) return;
+
+    // Writings board owns the full viewport; skip flex content layout
+    if (document.body.classList.contains('writings-page') &&
+        !document.body.classList.contains('hex-post-mode')) {
+        return;
+    }
+
+    content.classList.add('hex-positioned-content');
+}
+
+function loadSidebarLegacy() {
+    var sidebarContainer = document.getElementById('sidebar-container');
+    if (!sidebarContainer) return;
+
+    fetch('../sidebar.html?t=' + Date.now())
+        .then(function (response) {
+            if (!response.ok) throw new Error('Failed to fetch sidebar');
+            return response.text();
+        })
+        .then(function (html) {
+            sidebarContainer.innerHTML = html;
+            setActiveNavigationLink();
+        })
+        .catch(function () {
+            sidebarContainer.innerHTML =
+                '<nav class="sidebar">' +
+                '<div class="nav-header"><h1>Yan Pan</h1></div>' +
+                '<ul class="nav-links">' +
+                '<li><a href="home.html" class="nav-link">Home</a></li>' +
+                '<li><a href="about.html" class="nav-link">About</a></li>' +
+                '<li><a href="writings.html" class="nav-link">Writings</a></li>' +
+                '<li><a href="https://www.instagram.com/yanpanphoto/" class="nav-link" target="_blank" rel="noopener">Photo</a></li>' +
+                '</ul></nav>';
+            setActiveNavigationLink();
+        });
 }
 
 function setActiveNavigationLink() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const currentPage = window.location.pathname.split('/').pop();
-    
-    navLinks.forEach(link => {
-        const linkHref = link.getAttribute('href');
+    var navLinks = document.querySelectorAll('.nav-link, .site-nav-link');
+    var currentPage = window.location.pathname.split('/').pop() || 'home.html';
+
+    navLinks.forEach(function (link) {
+        var linkHref = link.getAttribute('href');
         if (linkHref === currentPage || (currentPage === '' && linkHref === 'home.html')) {
             link.classList.add('active');
+            if (link.closest('.site-nav-item')) {
+                link.closest('.site-nav-item').classList.add('is-active');
+            }
         } else {
             link.classList.remove('active');
+            if (link.closest('.site-nav-item')) {
+                link.closest('.site-nav-item').classList.remove('is-active');
+            }
         }
     });
 }
