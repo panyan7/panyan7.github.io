@@ -50,195 +50,84 @@
         return String(value).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
     }
 
-    function isFree(q, r, reserved) {
-        return !reserved[key(q, r)];
-    }
-
-    function neighbors(q, r) {
-        return HL().neighbors(q, r);
-    }
-
-    function findSlot(reserved, seeds) {
-        var seen = {};
-        var queue = [];
-        (seeds || []).forEach(function (s) {
-            queue.push({ q: s.q, r: s.r });
-        });
-
-        while (queue.length) {
-            var cur = queue.shift();
-            var k = key(cur.q, cur.r);
-            if (seen[k]) continue;
-            seen[k] = true;
-            // Never place content on the sidebar column q=0 (brand/nav stack)
-            if (cur.q !== 0 && isFree(cur.q, cur.r, reserved)) {
-                return { q: cur.q, r: cur.r };
-            }
-            neighbors(cur.q, cur.r).forEach(function (n) {
-                if (!seen[key(n.q, n.r)]) queue.push(n);
-            });
-        }
-
-        var origin = (seeds && seeds[0]) || { q: 2, r: 0 };
-        for (var rad = 1; rad < 14; rad++) {
-            for (var dq = -rad; dq <= rad; dq++) {
-                for (var dr = -rad; dr <= rad; dr++) {
-                    var qq = origin.q + dq;
-                    var rr = origin.r + dr;
-                    if (qq !== 0 && isFree(qq, rr, reserved)) {
-                        return { q: qq, r: rr };
-                    }
-                }
-            }
-        }
-        return { q: 2, r: 3 };
-    }
-
     /**
-     * Two free adjacent cells (bilingual block). Prefer horizontal (+1,0).
+     * User grid (1-based): row 1 col 1 = Yan Pan.
+     * Same row number ⇒ same horizontal line on screen (flat-top even-q offset).
+     *
+     *   q = col - 1
+     *   r = (row - 1) - floor((col - 1) / 2)   // even-q → axial
+     *     (equiv. r = row0 - (col0 - (col0&1)) / 2)
      */
-    function findPairSlot(reserved, seeds) {
-        var pairDirs = [
-            [1, 0], [-1, 0], [0, 1], [0, -1], [1, -1], [-1, 1]
-        ];
-        var seen = {};
-        var queue = [];
-        (seeds || []).forEach(function (s) {
-            queue.push({ q: s.q, r: s.r });
-        });
-
-        while (queue.length) {
-            var cur = queue.shift();
-            var k = key(cur.q, cur.r);
-            if (seen[k]) continue;
-            seen[k] = true;
-
-            if (cur.q !== 0 && isFree(cur.q, cur.r, reserved)) {
-                for (var d = 0; d < pairDirs.length; d++) {
-                    var nq = cur.q + pairDirs[d][0];
-                    var nr = cur.r + pairDirs[d][1];
-                    if (nq === 0) continue;
-                    if (isFree(nq, nr, reserved)) {
-                        if (pairDirs[d][0] < 0 || (pairDirs[d][0] === 0 && pairDirs[d][1] < 0)) {
-                            return {
-                                primary: { q: nq, r: nr },
-                                secondary: { q: cur.q, r: cur.r }
-                            };
-                        }
-                        return {
-                            primary: { q: cur.q, r: cur.r },
-                            secondary: { q: nq, r: nr }
-                        };
-                    }
-                }
-            }
-
-            neighbors(cur.q, cur.r).forEach(function (n) {
-                if (!seen[key(n.q, n.r)]) queue.push(n);
-            });
-        }
-
-        var p = findSlot(reserved, seeds);
-        for (var i = 0; i < pairDirs.length; i++) {
-            var sq = p.q + pairDirs[i][0];
-            var sr = p.r + pairDirs[i][1];
-            if (sq !== 0 && isFree(sq, sr, reserved)) {
-                return { primary: p, secondary: { q: sq, r: sr } };
-            }
-        }
-        return { primary: p, secondary: { q: p.q + 1, r: p.r } };
+    function userToAxial(col, row) {
+        var c = col - 1;
+        var ro = row - 1;
+        var q = c;
+        var r = ro - (c - (c & 1)) / 2;
+        return { q: q, r: r };
     }
 
     /**
-     * Content only (sidebar comes from HexLayout).
-     * Layout is relative to sidebar column at q=0.
+     * Fixed: r2c3 title, r3c3 intro, r4c3 player; r4c1 pagination later.
+     * Articles: allowed region, fill top→bottom then left→right (user row, then col).
      */
     function placeContent(blogs) {
         var cells = [];
         var reserved = {};
-        // Reserve sidebar column lattice cells so blogs don't land on them
+
+        function takeUser(col, row, data) {
+            var p = userToAxial(col, row);
+            reserved[key(p.q, p.r)] = true;
+            cells.push(Object.assign({ q: p.q, r: p.r }, data));
+        }
+
+        // Sidebar column q=0 (Yan / nav / pagination at user r4c1)
         for (var rr = -2; rr <= 8; rr++) {
             reserved[key(0, rr)] = true;
         }
 
-        var seeds = [];
-
-        function take(q, r, data) {
-            reserved[key(q, r)] = true;
-            cells.push(Object.assign({ q: q, r: r }, data));
-            seeds.push({ q: q, r: r });
-        }
-
-        // Title / intro to the right of sidebar
-        var titleSlot = findSlot(reserved, [{ q: 2, r: 0 }, { q: 1, r: 0 }]);
-        take(titleSlot.q, titleSlot.r, {
+        takeUser(3, 2, {
             type: 'title',
             text: 'The Library of Babel'
         });
-
-        var introSlot = findSlot(reserved, [
-            { q: titleSlot.q, r: titleSlot.r + 1 },
-            { q: titleSlot.q + 1, r: titleSlot.r }
-        ]);
-        take(introSlot.q, introSlot.r, {
+        takeUser(3, 3, {
             type: 'intro',
             text: 'This is a collection of random, useless, and often unfinished thoughts.'
         });
-
-        var blogSeed = [
-            { q: introSlot.q, r: introSlot.r + 1 },
-            { q: titleSlot.q + 1, r: titleSlot.r + 1 },
-            { q: 2, r: 2 }
-        ];
-
-        for (var i = 0; i < blogs.length; i++) {
-            var b = blogs[i];
-            var hasEn = !!(b.titleEn && String(b.titleEn).trim());
-            var blockId = b.filename;
-
-            if (hasEn) {
-                var pair = findPairSlot(reserved, blogSeed.concat(seeds.slice(-8)));
-                take(pair.primary.q, pair.primary.r, {
-                    type: 'blog',
-                    text: b.title,
-                    date: b.date,
-                    filename: b.filename,
-                    blockId: blockId
-                });
-                take(pair.secondary.q, pair.secondary.r, {
-                    type: 'blog-en',
-                    text: b.titleEn,
-                    filename: b.filename,
-                    blockId: blockId
-                });
-                blogSeed.push(pair.primary, pair.secondary);
-                neighbors(pair.primary.q, pair.primary.r).forEach(function (n) {
-                    blogSeed.push(n);
-                });
-                neighbors(pair.secondary.q, pair.secondary.r).forEach(function (n) {
-                    blogSeed.push(n);
-                });
-            } else {
-                var slot = findSlot(reserved, blogSeed.concat(seeds.slice(-8)));
-                take(slot.q, slot.r, {
-                    type: 'blog',
-                    text: b.title,
-                    date: b.date,
-                    filename: b.filename,
-                    blockId: blockId
-                });
-                blogSeed.push(slot);
-                neighbors(slot.q, slot.r).forEach(function (n) {
-                    blogSeed.push(n);
-                });
-            }
-        }
-
-        var playerSlot = findSlot(reserved, blogSeed.concat(seeds.slice(-6)));
-        take(playerSlot.q, playerSlot.r, {
+        takeUser(3, 4, {
             type: 'player',
             text: 'infinity repeating...'
         });
+
+        // User (col, row), top→bottom then left→right
+        // col2: rows1–4 | col3: rows1,5 | col4: rows1–4 | col5: rows2–4
+        var articleUserSlots = [
+            [2, 1], [3, 1], [4, 1],
+            [2, 2], [4, 2], [5, 2],
+            [2, 3], [4, 3], [5, 3],
+            [2, 4], [4, 4], [5, 4],
+            [3, 5]
+        ];
+
+        var si = 0;
+        for (var i = 0; i < blogs.length; i++) {
+            while (si < articleUserSlots.length) {
+                var ax = userToAxial(
+                    articleUserSlots[si][0],
+                    articleUserSlots[si][1]
+                );
+                if (!reserved[key(ax.q, ax.r)]) break;
+                si++;
+            }
+            if (si >= articleUserSlots.length) break;
+            var b = blogs[i];
+            var slot = articleUserSlots[si++];
+            takeUser(slot[0], slot[1], {
+                type: 'blog',
+                text: b.title,
+                date: b.date,
+                filename: b.filename
+            });
+        }
 
         return cells;
     }
@@ -370,13 +259,6 @@
                 escapeHtml(cell.filename) + '">' +
                 '<span class="hex-label-date">' + escapeHtml(date) + '</span>' +
                 '<span class="hex-label-text">' + escapeHtml(cell.text) + '</span>' +
-                '</a>';
-        } else if (cell.type === 'blog-en') {
-            inner =
-                '<a class="hex-label-link hex-label-link--blog hex-label-link--blog-en" href="#' +
-                escapeHtml(cell.filename) + '">' +
-                '<span class="hex-label-text hex-label-text--en">' +
-                escapeHtml(cell.text) + '</span>' +
                 '</a>';
         } else if (cell.type === 'player') {
             if (state.playerExpanded) {
