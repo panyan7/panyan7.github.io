@@ -7,6 +7,13 @@
 
     var VIDEO_SRC = 'https://www.youtube-nocookie.com/embed/imBlPXbAv6E?rel=0&autoplay=1';
 
+    /**
+     * Lattice size (HexLayout metrics.size) = OUTER hex radius — neighbors share edges.
+     * Inner ring on content blocks only: outer / INNER_RATIO (≈ 20% smaller).
+     */
+    var INNER_RATIO = 1.1;
+    var HEX_STROKE = '#cccccc';
+
     var state = {
         blogs: [],
         content: [],
@@ -246,6 +253,45 @@
         };
     }
 
+    /** Open path along flat-top hex perimeter (for stroke-dash animation). */
+    function hexPerimeterPath(cx, cy, radius) {
+        var pts = HL().hexCorners(cx, cy, radius);
+        var d = 'M ' + pts[0].x.toFixed(2) + ' ' + pts[0].y.toFixed(2);
+        for (var i = 1; i < pts.length; i++) {
+            d += ' L ' + pts[i].x.toFixed(2) + ' ' + pts[i].y.toFixed(2);
+        }
+        d += ' Z';
+        return d;
+    }
+
+    /**
+     * Empty cell: solid outer only (lattice-adjacent).
+     * Content cell: solid outer + smaller inner with 1/6 contour sweeping clockwise.
+     */
+    function hexCellSvg(cx, cy, outerR, fill, hasContent) {
+        var outerPts = HL().pointsAttr(HL().hexCorners(cx, cy, outerR));
+        var parts =
+            '<g class="hex-cell' + (hasContent ? ' hex-cell--content' : '') + '">' +
+            '<polygon class="hex-outer" points="' + outerPts +
+            '" fill="' + fill +
+            '" stroke="' + HEX_STROKE +
+            '" stroke-width="1" stroke-linejoin="round"/>';
+
+        if (hasContent) {
+            var innerR = outerR / INNER_RATIO;
+            var innerPath = hexPerimeterPath(cx, cy, innerR);
+            parts +=
+                '<path class="hex-inner-arc" d="' + innerPath +
+                '" fill="none" stroke="' + HEX_STROKE +
+                '" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round"' +
+                ' pathLength="6"' +
+                ' stroke-dasharray="1 5"/>';
+        }
+
+        parts += '</g>';
+        return parts;
+    }
+
     function render() {
         var board = document.getElementById('hex-board');
         if (!board || !state.visible || !HL()) return;
@@ -271,17 +317,15 @@
                     continue;
                 }
 
-                var corners = HL().hexCorners(c.x, c.y, m.size);
                 var cell = contentMap[key(q, r)];
-                // Sidebar column reserved: no white fill from content map
-                var fill = cell ? '#ffffff' : 'none';
+                // Sidebar column: brand (0,0), Home|About (0,1), Writings|Photo (0,2)
+                var isSidebarHex = (q === 0 && r >= 0 && r <= 2);
+                var hasContent = !!cell || isSidebarHex;
+                var fill = hasContent ? '#ffffff' : 'none';
 
-                svgParts.push(
-                    '<polygon points="' + HL().pointsAttr(corners) +
-                    '" fill="' + fill +
-                    '" stroke="#111111" stroke-width="1" stroke-linejoin="round"' +
-                    ' data-q="' + q + '" data-r="' + r + '"/>'
-                );
+                // m.size = outer radius; outers are lattice-adjacent
+                // Inner sweep only on content blocks + sidebar hexes
+                svgParts.push(hexCellSvg(c.x, c.y, m.size, fill, hasContent));
 
                 if (cell) {
                     labelParts.push(renderLabel(cell, m));

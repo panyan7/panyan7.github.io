@@ -214,6 +214,17 @@ body.hex-site-layout {
     font-weight: 600;
 }
 
+/* Line between two nav items that share one hex (Home|About, Writings|Photo) */
+.site-nav-divider {
+    position: absolute;
+    height: 0;
+    border: none;
+    border-top: 1px solid #cccccc;
+    pointer-events: none;
+    transform: translateY(-0.5px);
+    box-sizing: border-box;
+}
+
 /* Main content aligned to the right of the hex sidebar column */
 body.hex-site-layout main.content.hex-positioned-content,
 body.hex-site-layout .site-content.hex-positioned-content {
@@ -273,6 +284,37 @@ body.writings-page.hex-post-mode .site-nav {
     height: 100%;
     display: block;
     pointer-events: none;
+}
+
+/* Outer ring: full solid contour */
+.hex-outer {
+    vector-effect: non-scaling-stroke;
+}
+
+/*
+ * Inner ring: only 1/6 of the fixed perimeter is stroked.
+ * pathLength="6" → dash "1 5" = one side on, five off.
+ * Animating dashoffset sweeps the visible segment clockwise (hex shape fixed).
+ */
+.hex-inner-arc {
+    vector-effect: non-scaling-stroke;
+    animation: hex-inner-sweep 8s linear infinite;
+}
+
+@keyframes hex-inner-sweep {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        /* pathLength 6 → one full trip around the hex */
+        stroke-dashoffset: -6;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hex-inner-arc {
+        animation: none;
+    }
 }
 
 .hex-labels {

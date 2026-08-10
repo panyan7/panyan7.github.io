@@ -12,6 +12,22 @@
     var MAX_COL_W = 800; // matches .container max-width
     var PAD_REM = 4;     // matches .container padding
 
+    /**
+     * === Hex size knobs (edit these) ===
+     * size = OUTER hex radius (center → vertex). Lattice spacing uses this,
+     * so outer hexes sit adjacent. Content blocks also draw a smaller inner
+     * ring at size / INNER_RATIO (see hex-board.js).
+     *
+     * BASE_SIZE  preferred outer radius when the viewport allows it
+     * MIN_SIZE   never smaller than this
+     * MAX_SIZE   never larger than this
+     * SCALE      multiplies the auto-fit result (1.2 ≈ +20%)
+     */
+    var BASE_SIZE = 64;
+    var MIN_SIZE = 48;
+    var MAX_SIZE = 96;
+    var SCALE = 1.2;
+
     var DIRS = [
         [+1, 0], [0, -1], [-1, 0],
         [-1, +1], [0, +1], [+1, -1]
@@ -90,11 +106,11 @@
         var contentW = innerW - sidebarW;
 
         // Flat-top: width = 2R, height = √3 R; vertical neighbor step = √3 R
-        // Size: brand hex fits sidebar column; keep readable mid range
-        var sizeBySidebar = sidebarW * 0.48;
-        var sizeByHeight = innerH / (Math.sqrt(3) * 5.5); // brand + 4 half-steps + margin
-        var size = Math.floor(Math.min(sizeBySidebar, sizeByHeight, 58));
-        size = Math.max(36, size);
+        // Prefer BASE_SIZE, but shrink if sidebar/viewport is tight
+        var sizeBySidebar = sidebarW * 0.55;
+        var sizeByHeight = innerH / (Math.sqrt(3) * 5.2); // brand + half-step navs + margin
+        var size = Math.floor(Math.min(BASE_SIZE, sizeBySidebar, sizeByHeight) * SCALE);
+        size = Math.max(MIN_SIZE, Math.min(MAX_SIZE, size));
 
         var hexH = size * Math.sqrt(3); // full hex height / vertical step
         var hexW = size * 2;
@@ -208,12 +224,11 @@
         }
 
         var page = options.activePage || currentPageFile();
-        var showHex = !!options.showHexOutlines;
 
         var html = '';
-        if (showHex) {
-            // Optional: draw only sidebar hex outlines (writings draws full board separately)
-        }
+        var navSlots = m.slots.filter(function (s) {
+            return s.kind === 'nav';
+        });
 
         m.slots.forEach(function (slot) {
             var isBrand = slot.kind === 'brand';
@@ -246,6 +261,25 @@
                     '</a></div>';
             }
         });
+
+        // Dividers only on writings (hex outlines visible); other pages stay clean text nav
+        var isWritings = page === 'writings.html' ||
+            document.body.classList.contains('writings-page');
+        if (isWritings) {
+            for (var p = 0; p + 1 < navSlots.length; p += 2) {
+                var a = navSlots[p];
+                var b = navSlots[p + 1];
+                var midY = (a.y + b.y) / 2;
+                var lineW = m.hexW * 0.72;
+                var lineLeft = m.brandCx - lineW / 2;
+                html +=
+                    '<div class="site-nav-divider" style="' +
+                    'left:' + lineLeft.toFixed(1) + 'px;' +
+                    'top:' + midY.toFixed(1) + 'px;' +
+                    'width:' + lineW.toFixed(1) + 'px;"' +
+                    ' aria-hidden="true"></div>';
+            }
+        }
 
         host.innerHTML = html;
         host.hidden = false;
