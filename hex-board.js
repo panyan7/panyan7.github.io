@@ -91,7 +91,7 @@
         });
         takeUser(3, 3, {
             type: 'intro',
-            text: 'This is a collection of random, useless, and often unfinished thoughts.'
+            text: 'A collection of random, useless, and often unfinished thoughts...'
         });
         takeUser(3, 4, {
             type: 'player',
