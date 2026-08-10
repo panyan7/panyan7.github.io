@@ -242,6 +242,12 @@ body.hex-site-layout .site-content.hex-positioned-content {
     z-index: 10;
 }
 
+/* Title↔brand alignment is applied in JS (alignBrandHeading) via measured rects */
+body.about-page .page-title-align-brand {
+    margin-top: 0;
+    line-height: 1.2;
+}
+
 /* Hide legacy container chrome when using hex site layout */
 body.hex-site-layout .container {
     display: none;

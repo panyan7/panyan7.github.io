@@ -30,6 +30,7 @@ function mountSiteNav() {
 
     // Position main content from the same metrics as the sidebar
     layoutMainContent();
+    alignBrandHeading();
 }
 
 function layoutMainContent() {
@@ -47,6 +48,37 @@ function layoutMainContent() {
 
     content.classList.add('hex-positioned-content');
 }
+
+/**
+ * Put .page-title-align-brand on the same vertical center as Yan Pan.
+ * Uses measured DOM rects so font size / padding cannot drift.
+ */
+function alignBrandHeading() {
+    var brand = document.querySelector('.site-nav-item--brand');
+    var title = document.querySelector('.page-title-align-brand');
+    var content = document.querySelector('.hex-positioned-content');
+    if (!brand || !title || !content) return;
+
+    // Reset so measurement is from a known padding
+    content.style.paddingTop = '0px';
+    title.style.marginTop = '0px';
+
+    var brandRect = brand.getBoundingClientRect();
+    var titleRect = title.getBoundingClientRect();
+    var brandMid = brandRect.top + brandRect.height / 2;
+    var titleMid = titleRect.top + titleRect.height / 2;
+    var delta = brandMid - titleMid;
+
+    var basePad = 0;
+    content.style.paddingTop = Math.max(0, basePad + delta) + 'px';
+}
+
+// Re-align after hex layout resizes
+window.addEventListener('resize', function () {
+    if (!document.body.classList.contains('about-page')) return;
+    clearTimeout(window.__alignBrandTimer);
+    window.__alignBrandTimer = setTimeout(alignBrandHeading, 100);
+});
 
 function loadSidebarLegacy() {
     var sidebarContainer = document.getElementById('sidebar-container');

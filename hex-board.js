@@ -186,7 +186,7 @@
         if (!board || !state.visible || !HL()) return;
 
         HL().invalidate();
-        var m = HL().mountSidebar({ activePage: 'writings.html' });
+        var m = HL().mountSidebar({ activePage: 'writings.html', showDividers: true });
 
         var contentMap = {};
         state.content.forEach(function (c) {
@@ -371,9 +371,9 @@
             panel.innerHTML = html;
         }
         document.body.classList.add('hex-post-mode');
-        // Keep sidebar visible and stable on post view
+        // Keep sidebar visible and stable; no hex pair dividers on article view
         if (HL()) {
-            HL().mountSidebar({ activePage: 'writings.html' });
+            HL().mountSidebar({ activePage: 'writings.html', showDividers: false });
         }
     }
 

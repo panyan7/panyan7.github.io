@@ -204,6 +204,8 @@
         root.style.setProperty('--site-content-top', m.innerTop + 'px');
         root.style.setProperty('--site-pad', m.pad + 'px');
         root.style.setProperty('--site-sidebar-x', m.brandCx + 'px');
+        // Vertical center of the Yan Pan brand hex (viewport coords)
+        root.style.setProperty('--site-brand-cy', m.brandCy + 'px');
     }
 
     /**
@@ -262,10 +264,12 @@
             }
         });
 
-        // Dividers only on writings (hex outlines visible); other pages stay clean text nav
-        var isWritings = page === 'writings.html' ||
-            document.body.classList.contains('writings-page');
-        if (isWritings) {
+        // Dividers only on writings list (hex board), not article view or other pages
+        var showDividers = options.showDividers === true ||
+            (options.showDividers !== false &&
+                document.body.classList.contains('hex-board-mode') &&
+                !document.body.classList.contains('hex-post-mode'));
+        if (showDividers) {
             for (var p = 0; p + 1 < navSlots.length; p += 2) {
                 var a = navSlots[p];
                 var b = navSlots[p + 1];
