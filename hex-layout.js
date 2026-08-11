@@ -89,35 +89,61 @@
     /**
      * Metrics matching the original centered 800px column.
      * Sidebar hex column sits where the old 25% sidebar was.
+     * On narrow viewports, shrink pad + hex radius so ~5 content columns fit.
      */
     function computeMetrics(vw, vh) {
         vw = vw || window.innerWidth;
         vh = vh || window.innerHeight;
 
-        var pad = PAD_REM * remPx();
+        var isMobile = vw < 768;
+        var pad = (isMobile ? 1.25 : PAD_REM) * remPx();
         var boxW = Math.min(vw, MAX_COL_W);
         var boxLeft = (vw - boxW) / 2;
         var innerLeft = boxLeft + pad;
         var innerTop = pad;
         var innerW = Math.max(120, boxW - 2 * pad);
         var innerH = Math.max(120, vh - 2 * pad);
-        var sidebarW = innerW * 0.25;
+        // Slightly wider sidebar fraction on mobile so brand/nav stay readable
+        var sidebarFrac = isMobile ? 0.28 : 0.25;
+        var sidebarW = innerW * sidebarFrac;
         var contentLeft = innerLeft + sidebarW;
         var contentW = innerW - sidebarW;
 
         // Flat-top: width = 2R, height = √3 R; vertical neighbor step = √3 R
-        // Prefer BASE_SIZE, but shrink if sidebar/viewport is tight
-        var sizeBySidebar = sidebarW * 0.55;
-        var sizeByHeight = innerH / (Math.sqrt(3) * 5.2); // brand + half-step navs + margin
-        var size = Math.floor(Math.min(BASE_SIZE, sizeBySidebar, sizeByHeight) * SCALE);
-        size = Math.max(MIN_SIZE, Math.min(MAX_SIZE, size));
+        var minSize = isMobile ? 26 : MIN_SIZE;
+        var maxSize = isMobile ? 42 : MAX_SIZE;
+        var scale = isMobile ? 1.0 : SCALE;
+
+        var sizeBySidebar = sidebarW * (isMobile ? 0.62 : 0.55);
+        // Fit brand + half-step nav stack + bottom margin
+        var sizeByHeight = innerH / (Math.sqrt(3) * (isMobile ? 6.5 : 5.2));
+        // Content runs roughly q=0..4; right edge ≈ brandCx + 1.5*size*4 + size
+        // Use conservative fit so col-5 stays on-screen
+        var sizeByWidth = (vw - pad * 2) / (isMobile ? 9.5 : 8.5);
+
+        var size = Math.floor(
+            Math.min(BASE_SIZE, sizeBySidebar, sizeByHeight, sizeByWidth) * scale
+        );
+        size = Math.max(minSize, Math.min(maxSize, size));
 
         var hexH = size * Math.sqrt(3); // full hex height / vertical step
         var hexW = size * 2;
 
         // Brand center: middle of old sidebar column, near top (like original nav-header)
         var brandCx = innerLeft + sidebarW * 0.5;
-        var brandCy = innerTop + hexH * 0.55;
+        var brandCy = innerTop + hexH * (isMobile ? 0.5 : 0.55);
+
+        // Keep rightmost content hex (≈ q=4) inside the viewport
+        var rightmost = brandCx + size * 1.5 * 4 + size;
+        if (rightmost > vw - pad) {
+            var fit = Math.floor((vw - pad - brandCx) / 7);
+            if (fit >= minSize && fit < size) {
+                size = fit;
+                hexH = size * Math.sqrt(3);
+                hexW = size * 2;
+                brandCy = innerTop + hexH * (isMobile ? 0.5 : 0.55);
+            }
+        }
 
         // Axial (0,0) = brand center
         var originX = brandCx;

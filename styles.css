@@ -841,9 +841,63 @@ body.writings-page.hex-post-mode .hex-board {
         overflow: visible !important;
     }
 
+    /* Writings board stays a fixed viewport map (do not force page scroll mode) */
+    body.writings-page.hex-board-mode {
+        height: 100vh !important;
+        height: 100dvh !important;
+        overflow: hidden !important;
+    }
+
+    body.writings-page .hex-board {
+        height: 100vh;
+        height: 100dvh;
+    }
+
+    /* Smaller type so labels fit the mobile hex radius */
+    body.writings-page .site-nav-text--brand {
+        font-size: 0.95rem;
+    }
+
+    body.writings-page .site-nav-link {
+        font-size: 0.72rem;
+        padding: 0.15rem 0.25rem;
+    }
+
+    body.writings-page .hex-label-text--title {
+        font-size: clamp(0.7rem, 4.2vw, 1rem);
+    }
+
+    body.writings-page .hex-label-text--intro {
+        font-size: clamp(0.45rem, 2.6vw, 0.62rem);
+    }
+
+    body.writings-page .hex-label-text {
+        font-size: clamp(0.48rem, 2.8vw, 0.68rem);
+        -webkit-line-clamp: 4;
+    }
+
+    body.writings-page .hex-label-date {
+        font-size: clamp(0.38rem, 2.2vw, 0.5rem);
+    }
+
+    body.writings-page .hex-player-btn {
+        font-size: clamp(0.42rem, 2.4vw, 0.58rem);
+    }
+
+    body.writings-page .hex-label-inner {
+        width: 78%;
+        max-height: 72%;
+        padding: 0.12rem 0.2rem;
+    }
+
+    body.writings-page .site-nav-divider {
+        /* slightly shorter on mobile so they sit inside half-hex pairs */
+        max-width: 72%;
+    }
+
     /* Stack hex site chrome: nav still absolute from JS; content flows below */
-    body.hex-site-layout main.content.hex-positioned-content,
-    body.hex-site-layout .site-content.hex-positioned-content {
+    body.hex-site-layout:not(.writings-page) main.content.hex-positioned-content,
+    body.hex-site-layout:not(.writings-page) .site-content.hex-positioned-content {
         position: relative;
         top: auto;
         left: auto;
@@ -854,12 +908,18 @@ body.writings-page.hex-post-mode .hex-board {
         overflow-y: visible;
     }
 
+    body.writings-page.hex-post-mode {
+        height: auto !important;
+        overflow: visible !important;
+    }
+
     body.writings-page .post-panel {
         position: relative;
         top: auto;
         left: auto;
         width: 100%;
         height: auto;
+        min-height: 100vh;
         padding: 5rem 1rem 2rem;
     }
 
