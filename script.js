@@ -31,6 +31,12 @@ function mountSiteNav() {
     // Position main content from the same metrics as the sidebar
     layoutMainContent();
     alignBrandHeading();
+    // Re-run after webfonts so measured heights match final type
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () {
+            alignBrandHeading();
+        });
+    }
 }
 
 function layoutMainContent() {
@@ -50,34 +56,53 @@ function layoutMainContent() {
 }
 
 /**
- * Put .page-title-align-brand on the same vertical center as Yan Pan.
- * Uses measured DOM rects so font size / padding cannot drift.
+ * Put .page-title-align-brand on the same horizontal level as Yan Pan
+ * (matching vertical centers in the viewport).
+ *
+ * Uses margin on the title — not content padding — because mobile CSS sets
+ * padding with !important and would ignore inline padding-top.
  */
 function alignBrandHeading() {
-    var brand = document.querySelector('.site-nav-item--brand');
+    var brand = document.querySelector('.site-nav-item--brand .site-nav-text--brand') ||
+        document.querySelector('.site-nav-item--brand');
     var title = document.querySelector('.page-title-align-brand');
-    var content = document.querySelector('.hex-positioned-content');
-    if (!brand || !title || !content) return;
+    if (!brand || !title) return;
 
-    // Reset so measurement is from a known padding
-    content.style.paddingTop = '0px';
     title.style.marginTop = '0px';
 
-    var brandRect = brand.getBoundingClientRect();
-    var titleRect = title.getBoundingClientRect();
-    var brandMid = brandRect.top + brandRect.height / 2;
-    var titleMid = titleRect.top + titleRect.height / 2;
-    var delta = brandMid - titleMid;
+    // Double rAF: wait for layout after sidebar absolute positions apply
+    requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+            var brandRect = brand.getBoundingClientRect();
+            var titleRect = title.getBoundingClientRect();
+            if (!brandRect.height || !titleRect.height) return;
 
-    var basePad = 0;
-    content.style.paddingTop = Math.max(0, basePad + delta) + 'px';
+            var brandMid = brandRect.top + brandRect.height / 2;
+            var titleMid = titleRect.top + titleRect.height / 2;
+            var delta = brandMid - titleMid;
+
+            title.style.marginTop = delta + 'px';
+        });
+    });
 }
 
-// Re-align after hex layout resizes
+// Re-align / re-stack after resize
 window.addEventListener('resize', function () {
-    if (!document.body.classList.contains('about-page')) return;
     clearTimeout(window.__alignBrandTimer);
-    window.__alignBrandTimer = setTimeout(alignBrandHeading, 100);
+    window.__alignBrandTimer = setTimeout(function () {
+        if (window.HexLayout) {
+            var page = window.HexLayout.currentPageFile();
+            var opts = { activePage: page };
+            if (document.body.classList.contains('hex-post-mode')) {
+                opts.showDividers = false;
+            } else if (document.body.classList.contains('hex-board-mode')) {
+                opts.showDividers = true;
+            }
+            window.HexLayout.mountSidebar(opts);
+            layoutMainContent();
+        }
+        alignBrandHeading();
+    }, 100);
 });
 
 function loadSidebarLegacy() {

@@ -235,7 +235,8 @@
     }
 
     /**
-     * Render fixed sidebar from hex slots (invisible hexes on non-writings pages).
+     * Render fixed sidebar from hex slots (same positions on every page).
+     * Hex outlines only on writings list; nav coordinates always match the lattice.
      */
     function mountSidebar(options) {
         options = options || {};
@@ -246,12 +247,13 @@
         if (!host) {
             host = document.createElement('nav');
             host.id = 'site-nav';
-            host.className = 'site-nav';
             host.setAttribute('aria-label', 'Primary');
             document.body.insertBefore(host, document.body.firstChild);
         }
 
         var page = options.activePage || currentPageFile();
+        host.className = 'site-nav';
+        document.body.classList.remove('site-nav-stacked');
 
         var html = '';
         var navSlots = m.slots.filter(function (s) {

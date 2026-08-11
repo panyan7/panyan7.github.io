@@ -225,7 +225,7 @@ body.hex-site-layout {
     box-sizing: border-box;
 }
 
-/* Main content aligned to the right of the hex sidebar column */
+/* Main content aligned to the right of the hex sidebar column (all pages) */
 body.hex-site-layout main.content.hex-positioned-content,
 body.hex-site-layout .site-content.hex-positioned-content {
     position: fixed;
@@ -234,6 +234,7 @@ body.hex-site-layout .site-content.hex-positioned-content {
     width: var(--site-content-width, 75%);
     max-width: none;
     height: calc(100vh - var(--site-content-top, 4rem) - var(--site-pad, 4rem));
+    height: calc(100dvh - var(--site-content-top, 4rem) - var(--site-pad, 4rem));
     padding: 1rem 1.5rem 2rem 1rem;
     margin: 0;
     overflow-y: auto;
@@ -242,10 +243,13 @@ body.hex-site-layout .site-content.hex-positioned-content {
     z-index: 10;
 }
 
-/* Title↔brand alignment is applied in JS (alignBrandHeading) via measured rects */
+/* Title↔brand alignment: JS sets margin-top so centers match Yan Pan */
 body.about-page .page-title-align-brand {
     margin-top: 0;
+    margin-bottom: 1.5rem;
     line-height: 1.2;
+    font-size: 1.35rem; /* match Yan Pan brand */
+    font-weight: 600;
 }
 
 /* Hide legacy container chrome when using hex site layout */
@@ -895,32 +899,49 @@ body.writings-page.hex-post-mode .hex-board {
         max-width: 72%;
     }
 
-    /* Stack hex site chrome: nav still absolute from JS; content flows below */
+        /*
+     * Home / About / writings post: same as desktop — fixed content column
+     * to the right of the hex-positioned sidebar (vars from HexLayout).
+     */
     body.hex-site-layout:not(.writings-page) main.content.hex-positioned-content,
-    body.hex-site-layout:not(.writings-page) .site-content.hex-positioned-content {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-        padding: 6rem 1.25rem 2rem;
-        overflow-y: visible;
+    body.hex-site-layout:not(.writings-page) .site-content.hex-positioned-content,
+    body.writings-page.hex-post-mode .post-panel {
+        position: fixed !important;
+        top: var(--site-content-top, 1.25rem) !important;
+        left: var(--site-content-left, 28%) !important;
+        width: var(--site-content-width, 72%) !important;
+        height: calc(100dvh - var(--site-content-top, 1.25rem) - var(--site-pad, 1.25rem)) !important;
+        max-width: none;
+        padding: 0.5rem 0.75rem 1.5rem 0.5rem !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    body.hex-site-layout:not(.writings-page) {
+        height: 100vh !important;
+        height: 100dvh !important;
+        overflow: hidden !important;
     }
 
     body.writings-page.hex-post-mode {
-        height: auto !important;
-        overflow: visible !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        overflow: hidden !important;
     }
 
-    body.writings-page .post-panel {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 100%;
-        height: auto;
-        min-height: 100vh;
-        padding: 5rem 1rem 2rem;
+    /* Slightly smaller chrome on narrow screens (all pages) */
+    body.hex-site-layout:not(.writings-page) .site-nav-text--brand {
+        font-size: 1.05rem;
+    }
+
+    body.hex-site-layout:not(.writings-page) .site-nav-link {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.3rem;
+    }
+
+    body.hex-site-layout:not(.writings-page) .page h2,
+    body.hex-site-layout:not(.writings-page) .page-title-align-brand {
+        font-size: 1.25rem;
     }
 
     .container {
