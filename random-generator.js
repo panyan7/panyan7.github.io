@@ -4,7 +4,7 @@ class RandomGenerator {
             concepts: [
                 'Postmodernism', 'Magical Realism', 'Stream of Consciousness',
                 'Latin American Literature', 'Existentialism', 'Romanticism',
-                'Undecidability', 'Randomness'
+                'Surrealist Poetry', 'Undecidability', 'Randomness'
             ],
             creators: [
                 'Roberto Bolaño', 'Jorge Luis Borges', 'Thomas Pynchon',
@@ -12,7 +12,7 @@ class RandomGenerator {
                 'David Lynch', 'Wong Kar-Wai', 'Ang Lee'
             ],
             works: [
-                'One Hundred Years of Solitude', 'Pedro Páramo', 'The Aleph',
+                'One Hundred Years of Solitude', 'Pedro Páramo', 'Residence on Earth',
                 'Gravity\'s Rainbow', 'The Savage Detectives', '2666',
                 'A Shimmer of Possibility', 'Uncommon Places',
                 'Mulholland Drive', 'Pulp Fiction', 'The Matrix'
