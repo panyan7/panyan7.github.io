@@ -45,6 +45,9 @@
         }
     ];
 
+    var VIDEO_SRC = 'https://www.youtube-nocookie.com/embed/imBlPXbAv6E?rel=0&autoplay=1';
+    var libraryPlayerExpanded = false;
+
     var cached = null;
 
     function remPx() {
@@ -278,10 +281,43 @@
                 'height:' + h.toFixed(1) + 'px;';
 
             if (isBrand) {
-                html +=
-                    '<div class="' + cls + '" style="' + style + '">' +
-                    '<span class="site-nav-text site-nav-text--brand">Yan Pan</span>' +
-                    '</div>';
+                var isWritings = page === 'writings.html' ||
+                    document.body.classList.contains('writings-page');
+                if (isWritings) {
+                    // Full hex box so clip-path matches the board cell
+                    w = m.hexW;
+                    left = slot.x - w / 2;
+                    style =
+                        'left:' + left.toFixed(1) + 'px;' +
+                        'top:' + top.toFixed(1) + 'px;' +
+                        'width:' + w.toFixed(1) + 'px;' +
+                        'height:' + h.toFixed(1) + 'px;';
+                    cls += ' site-nav-item--library hex-label--flat';
+                    if (libraryPlayerExpanded) {
+                        cls += ' is-playing';
+                        html +=
+                            '<div class="' + cls + '" style="' + style + '">' +
+                            '<div class="hex-player-embed">' +
+                            '<iframe src="' + VIDEO_SRC +
+                            '" title="infinity repeating..."' +
+                            ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"' +
+                            ' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' +
+                            '</div></div>';
+                    } else {
+                        html +=
+                            '<div class="' + cls + '" style="' + style + '">' +
+                            '<button type="button" class="site-nav-library-btn" id="hex-library-btn"' +
+                            ' aria-label="Play infinity repeating">' +
+                            '<span class="site-nav-library-title">The Library</span>' +
+                            '<span class="site-nav-library-sub">infinity repeating...</span>' +
+                            '</button></div>';
+                    }
+                } else {
+                    html +=
+                        '<div class="' + cls + '" style="' + style + '">' +
+                        '<span class="site-nav-text site-nav-text--brand">Yan Pan</span>' +
+                        '</div>';
+                }
             } else {
                 var target = slot.external ? ' target="_blank" rel="noopener"' : '';
                 html +=
@@ -316,6 +352,14 @@
         host.innerHTML = html;
         host.hidden = false;
         document.body.classList.add('hex-site-layout');
+
+        var libBtn = host.querySelector('#hex-library-btn');
+        if (libBtn) {
+            libBtn.addEventListener('click', function () {
+                libraryPlayerExpanded = true;
+                mountSidebar(options);
+            });
+        }
 
         return m;
     }

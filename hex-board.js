@@ -5,8 +5,6 @@
 (function (global) {
     'use strict';
 
-    var VIDEO_SRC = 'https://www.youtube-nocookie.com/embed/imBlPXbAv6E?rel=0&autoplay=1';
-
     /**
      * Lattice size (HexLayout metrics.size) = OUTER hex radius — neighbors share edges.
      * Inner ring on content blocks only: outer / INNER_RATIO (≈ 20% smaller).
@@ -17,7 +15,6 @@
     var state = {
         blogs: [],
         content: [],
-        playerExpanded: false,
         visible: true
     };
 
@@ -67,7 +64,6 @@
     }
 
     /**
-     * Fixed: r2c3 title, r3c3 intro, r4c3 player; r4c1 pagination later.
      * Articles: allowed region, fill top→bottom then left→right (user row, then col).
      */
     function placeContent(blogs) {
@@ -85,26 +81,13 @@
             reserved[key(0, rr)] = true;
         }
 
-        takeUser(3, 2, {
-            type: 'title',
-            text: 'The Library of Babel'
-        });
-        takeUser(3, 3, {
-            type: 'intro',
-            text: 'A collection of random, useless, and often unfinished thoughts...'
-        });
-        takeUser(3, 4, {
-            type: 'player',
-            text: 'infinity repeating...'
-        });
-
         // User (col, row), top→bottom then left→right
-        // col2: rows1–4 | col3: rows1,5 | col4: rows1–4 | col5: rows2–4
+        // col2: rows1–4 | col3: rows1–5 | col4: rows1–4 | col5: rows2–4
         var articleUserSlots = [
             [2, 1], [3, 1], [4, 1],
-            [2, 2], [4, 2], [5, 2],
-            [2, 3], [4, 3], [5, 3],
-            [2, 4], [4, 4], [5, 4],
+            [2, 2], [3, 2], [4, 2], [5, 2],
+            [2, 3], [3, 3], [4, 3], [5, 3],
+            [2, 4], [3, 4], [4, 4], [5, 4],
             [3, 5]
         ];
 
@@ -294,15 +277,8 @@
         if (cell.blockId) cls += ' hex-label--block';
 
         var inner = '';
-        var playing = false;
 
-        if (cell.type === 'title') {
-            inner = '<span class="hex-label-text hex-label-text--title">' +
-                escapeHtml(cell.text) + '</span>';
-        } else if (cell.type === 'intro') {
-            inner = '<span class="hex-label-text hex-label-text--intro">' +
-                escapeHtml(cell.text) + '</span>';
-        } else if (cell.type === 'blog') {
+        if (cell.type === 'blog') {
             var date = formatDateCondensed(cell.date);
             inner =
                 '<a class="hex-label-link hex-label-link--blog" href="#' +
@@ -310,33 +286,6 @@
                 '<span class="hex-label-date">' + escapeHtml(date) + '</span>' +
                 '<span class="hex-label-text">' + escapeHtml(cell.text) + '</span>' +
                 '</a>';
-        } else if (cell.type === 'player') {
-            if (state.playerExpanded) {
-                playing = true;
-                cls += ' hex-label--playing';
-                // Full-cell embed; parent label provides a single perfect flat-top clip
-                inner =
-                    '<div class="hex-player-embed">' +
-                    '<iframe src="' + VIDEO_SRC +
-                    '" title="infinity repeating..."' +
-                    ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"' +
-                    ' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' +
-                    '</div>';
-            } else {
-                inner =
-                    '<button type="button" class="hex-player-btn" id="hex-player-btn">' +
-                    escapeHtml(cell.text) +
-                    '</button>';
-            }
-        }
-
-        if (playing) {
-            return (
-                '<div class="' + cls + '" style="' + style +
-                '" data-type="' + cell.type + '">' +
-                inner +
-                '</div>'
-            );
         }
 
         return (
@@ -349,14 +298,6 @@
     }
 
     function bindLabelEvents(board) {
-        var btn = board.querySelector('#hex-player-btn');
-        if (btn) {
-            btn.addEventListener('click', function () {
-                state.playerExpanded = true;
-                render();
-            });
-        }
-
         var blockLabels = board.querySelectorAll('.hex-label--block[data-block]');
         blockLabels.forEach(function (el) {
             var blockId = el.getAttribute('data-block');
@@ -392,7 +333,6 @@
         state.blogs = blogs || [];
         state.content = placeContent(state.blogs);
         state.visible = true;
-        state.playerExpanded = false;
 
         var board = document.getElementById('hex-board');
         var panel = document.getElementById('post-panel');
