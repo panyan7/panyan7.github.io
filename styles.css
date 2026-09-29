@@ -322,7 +322,7 @@ body.hex-site-layout .site-content.hex-positioned-content {
 
 /* Title↔brand alignment: JS sets margin-top so centers match Yan Pan */
 body.about-page .page-title-align-brand {
-    margin-top: 0;
+    margin-top: calc(var(--site-brand-cy) - var(--site-content-top) - 1rem - 0.81rem);
     margin-bottom: 1.5rem;
     line-height: 1.2;
     font-size: 1.35rem; /* match Yan Pan brand */
@@ -950,7 +950,12 @@ body.writings-page.hex-post-mode .hex-board {
 
     body.hex-site-layout:not(.writings-page) .page h2,
     body.hex-site-layout:not(.writings-page) .page-title-align-brand {
-        font-size: 1.25rem;
+        font-size: 1.05rem; /* match Yan Pan brand on mobile */
+        line-height: 1.2;
+    }
+
+    body.about-page .page-title-align-brand {
+        margin-top: calc(var(--site-brand-cy) - var(--site-content-top) - 0.5rem - 0.63rem);
     }
 
     .container {

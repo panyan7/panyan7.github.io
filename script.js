@@ -30,13 +30,8 @@ function mountSiteNav() {
 
     // Position main content from the same metrics as the sidebar
     layoutMainContent();
-    alignBrandHeading();
-    // Re-run after webfonts so measured heights match final type
-    if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(function () {
-            alignBrandHeading();
-        });
-    }
+    scheduleBrandAlign();
+    watchBrandAlign();
 }
 
 function layoutMainContent() {
@@ -56,34 +51,83 @@ function layoutMainContent() {
 }
 
 /**
- * Put .page-title-align-brand on the same horizontal level as Yan Pan
- * (matching vertical centers in the viewport).
+ * Line up .page-title-align-brand with the Yan Pan text (same vertical center).
  *
- * Uses margin on the title — not content padding — because mobile CSS sets
- * padding with !important and would ignore inline padding-top.
+ * Adds to the current margin (CSS calc is the first-paint fallback). Never
+ * reset to 0 before measuring — overlapping calls used to write 0 and leave
+ * the title high until the next resize.
  */
 function alignBrandHeading() {
     var brand = document.querySelector('.site-nav-item--brand .site-nav-text--brand') ||
         document.querySelector('.site-nav-item--brand');
-    var title = document.querySelector('.page-title-align-brand');
-    if (!brand || !title) return;
+    if (!brand) return false;
 
-    title.style.marginTop = '0px';
+    var targets = document.querySelectorAll('.page-title-align-brand');
+    if (!targets.length) return false;
 
-    // Double rAF: wait for layout after sidebar absolute positions apply
+    var brandRect = brand.getBoundingClientRect();
+    if (!brandRect.height) return false;
+    var brandMid = brandRect.top + brandRect.height / 2;
+    var applied = false;
+
+    for (var j = 0; j < targets.length; j++) {
+        var el = targets[j];
+        var titleRect = el.getBoundingClientRect();
+        if (!titleRect.height) continue;
+        var delta = brandMid - (titleRect.top + titleRect.height / 2);
+        if (Math.abs(delta) < 0.5) {
+            applied = true;
+            continue;
+        }
+        var current = parseFloat(window.getComputedStyle(el).marginTop) || 0;
+        el.style.marginTop = (current + delta) + 'px';
+        applied = true;
+    }
+    return applied;
+}
+
+function scheduleBrandAlign() {
+    window.__alignBrandGen = (window.__alignBrandGen || 0) + 1;
+    var gen = window.__alignBrandGen;
     requestAnimationFrame(function () {
         requestAnimationFrame(function () {
-            var brandRect = brand.getBoundingClientRect();
-            var titleRect = title.getBoundingClientRect();
-            if (!brandRect.height || !titleRect.height) return;
-
-            var brandMid = brandRect.top + brandRect.height / 2;
-            var titleMid = titleRect.top + titleRect.height / 2;
-            var delta = brandMid - titleMid;
-
-            title.style.marginTop = delta + 'px';
+            if (gen !== window.__alignBrandGen) return;
+            alignBrandHeading();
         });
     });
+}
+
+function watchBrandAlign() {
+    if (!window.__brandAlignWatched) {
+        window.__brandAlignWatched = true;
+
+        window.addEventListener('load', function () {
+            scheduleBrandAlign();
+        });
+
+        if (document.fonts) {
+            if (document.fonts.ready) {
+                document.fonts.ready.then(scheduleBrandAlign);
+            }
+            if (document.fonts.addEventListener) {
+                document.fonts.addEventListener('loadingdone', scheduleBrandAlign);
+            }
+        }
+
+    }
+
+    var brand = document.querySelector('.site-nav-item--brand .site-nav-text--brand') ||
+        document.querySelector('.site-nav-item--brand');
+    if (!brand || typeof ResizeObserver !== 'function') return;
+
+    if (window.__brandAlignObs) {
+        window.__brandAlignObs.disconnect();
+    } else {
+        window.__brandAlignObs = new ResizeObserver(function () {
+            scheduleBrandAlign();
+        });
+    }
+    window.__brandAlignObs.observe(brand);
 }
 
 // Re-align / re-stack after resize
@@ -100,8 +144,9 @@ window.addEventListener('resize', function () {
             }
             window.HexLayout.mountSidebar(opts);
             layoutMainContent();
+            watchBrandAlign();
         }
-        alignBrandHeading();
+        scheduleBrandAlign();
     }, 100);
 });
 
